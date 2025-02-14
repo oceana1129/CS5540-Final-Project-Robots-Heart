@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 182dbaf9b174ca2448d7f5d47cdf1ea4
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: N00_000_00_Face_00_SKIN (Instance)
+    second: {fileID: -3795172059498023923, guid: 182dbaf9b174ca2448d7f5d47cdf1ea4,
+      type: 3}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f66ead3390398f443aa127b741826ad9, type: 3}
+  MigrateToVrm1: 1
+  RenderPipeline: 0
