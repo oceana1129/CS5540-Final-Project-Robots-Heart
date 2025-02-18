@@ -6,11 +6,11 @@ namespace UniGLTF.EditorSettingsValidator
     public sealed class UnityColorSpaceSettingsValidator : IUnitySettingsValidator
     {
         public bool IsValid =>
-#if UNIGLTF_USE_GAMMA_COLORSPACE
+// #if UNIGLTF_USE_GAMMA_COLORSPACE
                 true
-#else
-                PlayerSettings.colorSpace == UnityEngine.ColorSpace.Linear
-#endif
+// #else
+                // PlayerSettings.colorSpace == UnityEngine.ColorSpace.Linear
+// #endif
                 ;
 
         public string HeaderDescription => Messages.ColorSpace.Msg();
