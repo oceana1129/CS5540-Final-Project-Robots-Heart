@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 613658699}
   - component: {fileID: 613658698}
   - component: {fileID: 613658701}
+  - component: {fileID: 613658702}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -327,8 +328,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 613658697}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0025243347, y: 0.99478084, z: -0.098799646, w: -0.025365818}
-  m_LocalPosition: {x: 0.041456666, y: 1.2260433, z: 1.6941242}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.041456666, y: 1.2260433, z: -3.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -378,6 +379,24 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &613658702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613658697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4881e220c27f5b429ebef8a5150ccda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  offset: {x: 0, y: 2, z: -5}
+  smoothSpeed: 0.125
+  useBounds: 0
+  minBounds: {x: 0, y: 0}
+  maxBounds: {x: 0, y: 0}
 --- !u!1 &814055093
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,6 +590,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AURA_1.0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2969110529223773069, guid: 03107dbc8387c6946b2a15b39ecaa93c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8199436310235329215, guid: 03107dbc8387c6946b2a15b39ecaa93c,
         type: 3}
