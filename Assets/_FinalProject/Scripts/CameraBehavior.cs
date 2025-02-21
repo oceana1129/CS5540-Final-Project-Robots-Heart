@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CameraBehavior : MonoBehaviour
 {
-
+    [Header("Camera")]
     public Transform player;     // reference to the player's transform
     public Vector3 offset = new Vector3(0, 2, -5);  // camera offset
     public float smoothSpeed = 0.125f; // smoothing speed for the camera movement
