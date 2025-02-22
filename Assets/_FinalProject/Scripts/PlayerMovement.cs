@@ -12,11 +12,12 @@ public class PlayerMovement : MonoBehaviour
     public float jumpHeight = 2.0f;
     public float gravity = 9.81f;
     public float rotationFactorPerFrame = 15.0f;
-
+    public static bool IsAiming {get; set;} = false;
+    public static bool CanRotate {get; set;} = false;
     private Vector2 currentMovementInput;
     private Vector3 currentMovement;
     private Vector3 currentRunMovement;
-     private float verticalVelocity;
+    private float verticalVelocity;
     private bool isMovementPressed;
     private bool isRunPressed;
     private bool isJumpPressed;
@@ -49,7 +50,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         ApplyGravity();
-        HandleRotation();
+
+        if (CanRotate)
+            HandleRotation();
+
         HandleAnimation();
 
         Vector3 movement = isRunPressed ? currentRunMovement : currentMovement;
@@ -135,6 +139,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("isJumping", isJumping);
         animator.SetFloat("velocityX", velocityX);
         animator.SetFloat("velocityY", velocityY);
+        animator.SetBool("isAiming", IsAiming);
         
     }
 
