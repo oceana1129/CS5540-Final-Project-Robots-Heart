@@ -28,6 +28,33 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             ""id"": ""d46beb88-4cd8-458f-b790-7eccea8e13df"",
             ""actions"": [
                 {
+                    ""name"": ""PauseMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""f8b4d1b1-e7d6-4aab-9922-b9edb6e626d4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""InventoryMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""e1c2728b-32d9-4bf7-b8ba-e00112e3ae6e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ViewMap"",
+                    ""type"": ""Button"",
+                    ""id"": ""f5374f17-9cf5-4431-a412-ed1ef3c349d4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Move"",
                     ""type"": ""Value"",
                     ""id"": ""45f62fb5-9377-47ab-8fd8-d64a095aafbc"",
@@ -35,6 +62,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": ""NormalizeVector2"",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Run"",
+                    ""type"": ""Button"",
+                    ""id"": ""81b4ca92-10b1-49bd-982b-71e60b25ce81"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""Jump"",
@@ -46,9 +82,45 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Run"",
+                    ""name"": ""Examine"",
                     ""type"": ""Button"",
-                    ""id"": ""81b4ca92-10b1-49bd-982b-71e60b25ce81"",
+                    ""id"": ""ca9caa0f-4aa6-4d7a-bdcf-03e4cd40ce50"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hack"",
+                    ""type"": ""Button"",
+                    ""id"": ""666d4eed-3cd6-4e3e-90c7-77284992aeb9"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Stun"",
+                    ""type"": ""Button"",
+                    ""id"": ""b2635cb3-ba83-456b-8e42-3c54315ca3e4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Aiming"",
+                    ""type"": ""Button"",
+                    ""id"": ""a127890e-9804-46d9-a8f9-42e486226f6c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""5023d0ac-1ae7-4191-a764-570a0ce6382f"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -165,6 +237,116 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Run"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""63d9b4fc-9f85-4575-bc81-59f3dae3b6c7"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b7fe9cde-6184-41b0-a7db-9616dcaee8fb"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Examine"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8541dcf1-02bf-4c2d-a79c-f261486e8bd2"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Examine"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5213ddcd-dc08-44f6-a160-c18e4f5f1d40"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Hack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4df7cb4a-732d-4735-b980-6c45d3fc552a"",
+                    ""path"": ""<Keyboard>/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Hack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""001f8a21-7a25-46c3-ad0c-f4bb13bd4c97"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PauseMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8ac232fc-e64f-49cf-bd8e-af8c4ee8b48d"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""InventoryMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""70d1d3e3-10e8-46f2-8cd4-a2cde0de6ae1"",
+                    ""path"": ""<Keyboard>/m"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ViewMap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""82dfaa4f-6ba7-4c0b-8524-82bf351388a5"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aiming"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b7d3d221-6d87-4bc8-8ca3-e9fc7a862814"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Stun"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -173,9 +355,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
 }");
         // Controls
         m_Controls = asset.FindActionMap("Controls", throwIfNotFound: true);
+        m_Controls_PauseMenu = m_Controls.FindAction("PauseMenu", throwIfNotFound: true);
+        m_Controls_InventoryMenu = m_Controls.FindAction("InventoryMenu", throwIfNotFound: true);
+        m_Controls_ViewMap = m_Controls.FindAction("ViewMap", throwIfNotFound: true);
         m_Controls_Move = m_Controls.FindAction("Move", throwIfNotFound: true);
-        m_Controls_Jump = m_Controls.FindAction("Jump", throwIfNotFound: true);
         m_Controls_Run = m_Controls.FindAction("Run", throwIfNotFound: true);
+        m_Controls_Jump = m_Controls.FindAction("Jump", throwIfNotFound: true);
+        m_Controls_Examine = m_Controls.FindAction("Examine", throwIfNotFound: true);
+        m_Controls_Hack = m_Controls.FindAction("Hack", throwIfNotFound: true);
+        m_Controls_Stun = m_Controls.FindAction("Stun", throwIfNotFound: true);
+        m_Controls_Aiming = m_Controls.FindAction("Aiming", throwIfNotFound: true);
+        m_Controls_Shoot = m_Controls.FindAction("Shoot", throwIfNotFound: true);
     }
 
     ~@PlayerInput()
@@ -242,16 +432,32 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     // Controls
     private readonly InputActionMap m_Controls;
     private List<IControlsActions> m_ControlsActionsCallbackInterfaces = new List<IControlsActions>();
+    private readonly InputAction m_Controls_PauseMenu;
+    private readonly InputAction m_Controls_InventoryMenu;
+    private readonly InputAction m_Controls_ViewMap;
     private readonly InputAction m_Controls_Move;
-    private readonly InputAction m_Controls_Jump;
     private readonly InputAction m_Controls_Run;
+    private readonly InputAction m_Controls_Jump;
+    private readonly InputAction m_Controls_Examine;
+    private readonly InputAction m_Controls_Hack;
+    private readonly InputAction m_Controls_Stun;
+    private readonly InputAction m_Controls_Aiming;
+    private readonly InputAction m_Controls_Shoot;
     public struct ControlsActions
     {
         private @PlayerInput m_Wrapper;
         public ControlsActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @PauseMenu => m_Wrapper.m_Controls_PauseMenu;
+        public InputAction @InventoryMenu => m_Wrapper.m_Controls_InventoryMenu;
+        public InputAction @ViewMap => m_Wrapper.m_Controls_ViewMap;
         public InputAction @Move => m_Wrapper.m_Controls_Move;
-        public InputAction @Jump => m_Wrapper.m_Controls_Jump;
         public InputAction @Run => m_Wrapper.m_Controls_Run;
+        public InputAction @Jump => m_Wrapper.m_Controls_Jump;
+        public InputAction @Examine => m_Wrapper.m_Controls_Examine;
+        public InputAction @Hack => m_Wrapper.m_Controls_Hack;
+        public InputAction @Stun => m_Wrapper.m_Controls_Stun;
+        public InputAction @Aiming => m_Wrapper.m_Controls_Aiming;
+        public InputAction @Shoot => m_Wrapper.m_Controls_Shoot;
         public InputActionMap Get() { return m_Wrapper.m_Controls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -261,28 +467,76 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_ControlsActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_ControlsActionsCallbackInterfaces.Add(instance);
+            @PauseMenu.started += instance.OnPauseMenu;
+            @PauseMenu.performed += instance.OnPauseMenu;
+            @PauseMenu.canceled += instance.OnPauseMenu;
+            @InventoryMenu.started += instance.OnInventoryMenu;
+            @InventoryMenu.performed += instance.OnInventoryMenu;
+            @InventoryMenu.canceled += instance.OnInventoryMenu;
+            @ViewMap.started += instance.OnViewMap;
+            @ViewMap.performed += instance.OnViewMap;
+            @ViewMap.canceled += instance.OnViewMap;
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
-            @Jump.started += instance.OnJump;
-            @Jump.performed += instance.OnJump;
-            @Jump.canceled += instance.OnJump;
             @Run.started += instance.OnRun;
             @Run.performed += instance.OnRun;
             @Run.canceled += instance.OnRun;
+            @Jump.started += instance.OnJump;
+            @Jump.performed += instance.OnJump;
+            @Jump.canceled += instance.OnJump;
+            @Examine.started += instance.OnExamine;
+            @Examine.performed += instance.OnExamine;
+            @Examine.canceled += instance.OnExamine;
+            @Hack.started += instance.OnHack;
+            @Hack.performed += instance.OnHack;
+            @Hack.canceled += instance.OnHack;
+            @Stun.started += instance.OnStun;
+            @Stun.performed += instance.OnStun;
+            @Stun.canceled += instance.OnStun;
+            @Aiming.started += instance.OnAiming;
+            @Aiming.performed += instance.OnAiming;
+            @Aiming.canceled += instance.OnAiming;
+            @Shoot.started += instance.OnShoot;
+            @Shoot.performed += instance.OnShoot;
+            @Shoot.canceled += instance.OnShoot;
         }
 
         private void UnregisterCallbacks(IControlsActions instance)
         {
+            @PauseMenu.started -= instance.OnPauseMenu;
+            @PauseMenu.performed -= instance.OnPauseMenu;
+            @PauseMenu.canceled -= instance.OnPauseMenu;
+            @InventoryMenu.started -= instance.OnInventoryMenu;
+            @InventoryMenu.performed -= instance.OnInventoryMenu;
+            @InventoryMenu.canceled -= instance.OnInventoryMenu;
+            @ViewMap.started -= instance.OnViewMap;
+            @ViewMap.performed -= instance.OnViewMap;
+            @ViewMap.canceled -= instance.OnViewMap;
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
-            @Jump.started -= instance.OnJump;
-            @Jump.performed -= instance.OnJump;
-            @Jump.canceled -= instance.OnJump;
             @Run.started -= instance.OnRun;
             @Run.performed -= instance.OnRun;
             @Run.canceled -= instance.OnRun;
+            @Jump.started -= instance.OnJump;
+            @Jump.performed -= instance.OnJump;
+            @Jump.canceled -= instance.OnJump;
+            @Examine.started -= instance.OnExamine;
+            @Examine.performed -= instance.OnExamine;
+            @Examine.canceled -= instance.OnExamine;
+            @Hack.started -= instance.OnHack;
+            @Hack.performed -= instance.OnHack;
+            @Hack.canceled -= instance.OnHack;
+            @Stun.started -= instance.OnStun;
+            @Stun.performed -= instance.OnStun;
+            @Stun.canceled -= instance.OnStun;
+            @Aiming.started -= instance.OnAiming;
+            @Aiming.performed -= instance.OnAiming;
+            @Aiming.canceled -= instance.OnAiming;
+            @Shoot.started -= instance.OnShoot;
+            @Shoot.performed -= instance.OnShoot;
+            @Shoot.canceled -= instance.OnShoot;
         }
 
         public void RemoveCallbacks(IControlsActions instance)
@@ -302,8 +556,16 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     public ControlsActions @Controls => new ControlsActions(this);
     public interface IControlsActions
     {
+        void OnPauseMenu(InputAction.CallbackContext context);
+        void OnInventoryMenu(InputAction.CallbackContext context);
+        void OnViewMap(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
-        void OnJump(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnExamine(InputAction.CallbackContext context);
+        void OnHack(InputAction.CallbackContext context);
+        void OnStun(InputAction.CallbackContext context);
+        void OnAiming(InputAction.CallbackContext context);
+        void OnShoot(InputAction.CallbackContext context);
     }
 }
