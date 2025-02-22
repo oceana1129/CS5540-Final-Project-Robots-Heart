@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Sun
+  - Pad
+  - Door
   layers:
   - Default
   - TransparentFX
