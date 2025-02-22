@@ -13171,7 +13171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionRange: 2
-  pressETextUI: {fileID: 1121072714}
+  instructionTextUI: {fileID: 1121072714}
   infoTextUI: {fileID: 734440481}
 --- !u!1001 &688347174
 PrefabInstance:
