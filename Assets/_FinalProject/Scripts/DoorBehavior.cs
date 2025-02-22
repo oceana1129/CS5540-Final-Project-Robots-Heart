@@ -13,12 +13,11 @@ public class DoorBehavior : MonoBehaviour {
     float DoorCloseAngle = 0.0f;
 	public AudioSource asource;
 	public AudioClip openDoor,closeDoor;
-	// Use this for initialization
+
 	void Start () {
 		asource = GetComponent<AudioSource> ();
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		if (open)
 		{
