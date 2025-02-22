@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 3
   tags:
   - Sun
-  - Enemy
   layers:
   - Default
   - TransparentFX
