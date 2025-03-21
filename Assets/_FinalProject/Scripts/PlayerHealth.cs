@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     public static bool IsAlive{get; private set;}
-    public int startingHealth = 100;
+    public int maxHealth = 100;
     private int currentHealth = 100;
 
     [Header("References")]
@@ -14,14 +14,14 @@ public class PlayerHealth : MonoBehaviour
     void Awake()
     {
         animator = GetComponent<Animator>();
-        currentHealth = startingHealth;
+        currentHealth = maxHealth;
         IsAlive = true;
     }
 
     public void HealDamage(int heal)
     {
         currentHealth += heal;
-        currentHealth = Mathf.Clamp(currentHealth, 0, startingHealth);
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         HandleAnimation();
 
         Debug.Log("current health " + currentHealth);
@@ -30,7 +30,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        currentHealth = Mathf.Clamp(currentHealth, 0, startingHealth);
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         HandleAnimation();
 
         Debug.Log("current health " + currentHealth);
@@ -48,7 +48,7 @@ public class PlayerHealth : MonoBehaviour
 
     void HandleAnimation() 
     {
-        float energyLevels = Mathf.Clamp(((float)currentHealth / startingHealth) * 100f, 0f, 100f);
+        float energyLevels = Mathf.Clamp(((float)currentHealth / maxHealth) * 100f, 0f, 100f);
 
         animator.SetFloat("energyLevels", energyLevels);
     }
