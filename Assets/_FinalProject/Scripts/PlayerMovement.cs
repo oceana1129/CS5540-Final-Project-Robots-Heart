@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(AudioSource))]
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement Settings")]
@@ -12,6 +13,12 @@ public class PlayerMovement : MonoBehaviour
     public float rotationFactorPerFrame = 15.0f;
     public static bool IsAiming {get; set;} = false;
     public static bool CanRotate {get; set;} = false;
+
+    [Header("SFX Settings")]
+    public AudioClip jump1;
+    public AudioClip jump2;
+
+    // private variables
     private Vector2 currentMovementInput;
     private Vector3 currentMovement;
     private Vector3 currentRunMovement;
@@ -25,11 +32,13 @@ public class PlayerMovement : MonoBehaviour
     private PlayerInput playerInput;
     private CharacterController characterController;
     private Animator animator;
+    private AudioSource audioSource;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
 
         playerInput = new PlayerInput();
         playerInput.Enable();
@@ -80,12 +89,18 @@ public class PlayerMovement : MonoBehaviour
     void OnJumpInput(InputAction.CallbackContext context)
     {
         isJumpPressed = context.ReadValueAsButton();
+        AudioClip jumpingSfx = Random.Range(1, 3) == 1 ? jump1 : jump2;
 
         // Only jump if the player is grounded
         if (isJumpPressed && characterController.isGrounded)
         {
             verticalVelocity = Mathf.Sqrt(2 * jumpHeight * gravity); // apply jump force
             isJumping = true;
+
+            if (jumpingSfx)
+                audioSource.PlayOneShot(jumpingSfx);
+            else
+                Debug.LogError("No jumping sound effect available");
         }
     }
 
@@ -103,27 +118,27 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void ApplyGravity()
-{
-    if (characterController.isGrounded) // if touching ground
     {
-        if (isJumping)
+        if (characterController.isGrounded) // if touching ground
         {
-            isJumping = false; // reset jump when landed
+            if (isJumping)
+            {
+                isJumping = false; // reset jump when landed
+            }
+            else
+            {
+                verticalVelocity = -2f; // keep character grounded
+            }
         }
         else
         {
-            verticalVelocity = -2f; // keep character grounded
+            verticalVelocity -= gravity * Time.deltaTime; // apply gravity
         }
-    }
-    else
-    {
-        verticalVelocity -= gravity * Time.deltaTime; // apply gravity
-    }
 
-    // apply vertical movement to both walking and running
-    currentMovement.y = verticalVelocity;
-    currentRunMovement.y = verticalVelocity;
-}
+        // apply vertical movement to both walking and running
+        currentMovement.y = verticalVelocity;
+        currentRunMovement.y = verticalVelocity;
+    }
 
 
     void HandleAnimation() 
