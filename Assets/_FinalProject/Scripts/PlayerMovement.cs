@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip jump2;
 
     // private variables
+    private float scaleMultiplier = 1f;
     private Vector2 currentMovementInput;
     private Vector3 currentMovement;
     private Vector3 currentRunMovement;
@@ -39,6 +40,12 @@ public class PlayerMovement : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+
+        scaleMultiplier = transform.localScale.y;
+        speed *= scaleMultiplier;
+        runSpeed *= scaleMultiplier;
+        jumpHeight *= scaleMultiplier;
+        gravity *= scaleMultiplier;
 
         playerInput = new PlayerInput();
         playerInput.Enable();

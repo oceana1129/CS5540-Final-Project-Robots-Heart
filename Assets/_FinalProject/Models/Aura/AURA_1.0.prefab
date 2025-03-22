@@ -1117,6 +1117,8 @@ MonoBehaviour:
   jumpHeight: 1.6
   gravity: 15
   rotationFactorPerFrame: 15
+  jump1: {fileID: 8300000, guid: 12b3e096f40af414a927df56c8fa5e83, type: 3}
+  jump2: {fileID: 8300000, guid: 9793a613c9524bf4b9f09343be3b0a44, type: 3}
 --- !u!114 &3017303508702460452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1130,6 +1132,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  healthSlider: {fileID: 0}
+  damage1Sfx: {fileID: 8300000, guid: a0c63a36c1b8e964c9eb55b72078b9c5, type: 3}
+  damage2Sfx: {fileID: 8300000, guid: 5be29e867b066fc40b36d0b4df071b07, type: 3}
+  damage3Sfx: {fileID: 8300000, guid: 380865ba4f5e8634e9e175d79a9b0d1c, type: 3}
+  heal1Sfx: {fileID: 8300000, guid: 6c50e6dbb95f75241a462cd42354c3a2, type: 3}
+  heal2Sfx: {fileID: 8300000, guid: e32b68de3ba56a144a090da0bddcca36, type: 3}
 --- !u!114 &5768645745004171632
 MonoBehaviour:
   m_ObjectHideFlags: 0

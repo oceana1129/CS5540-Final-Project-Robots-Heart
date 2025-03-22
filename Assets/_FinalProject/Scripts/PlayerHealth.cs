@@ -9,6 +9,10 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
     private int CurrentHealth {get; set;} = 100;
 
+    [Header("UI Settings")]
+
+    public Slider healthSlider;
+
     [Header("SFX Settings")]
     public AudioClip damage1Sfx;
     public AudioClip damage2Sfx;
@@ -27,6 +31,14 @@ public class PlayerHealth : MonoBehaviour
         
         CurrentHealth = maxHealth;
         IsAlive = true;
+        UpdateHealthSlider();
+    }
+    void UpdateHealthSlider()
+    {
+        if (healthSlider)
+        {
+            healthSlider.value = CurrentHealth;
+        }
     }
 
     public void HealDamage(int heal)
@@ -43,7 +55,9 @@ public class PlayerHealth : MonoBehaviour
 
         CurrentHealth += heal;
         CurrentHealth = Mathf.Clamp(CurrentHealth, 0, maxHealth);
+
         HandleAnimation();
+        UpdateHealthSlider();
 
         Debug.Log("current health " + CurrentHealth);
     }
@@ -65,14 +79,17 @@ public class PlayerHealth : MonoBehaviour
 
         CurrentHealth -= damage;
         CurrentHealth = Mathf.Clamp(CurrentHealth, 0, maxHealth);
+        
         HandleAnimation();
+        UpdateHealthSlider();
 
         Debug.Log("current health " + CurrentHealth);
-        
+
         if (CurrentHealth <= 0 && IsAlive)
         {
             PlayerDies();
         }
+        
     }
 
     public void PlayerDies() 
