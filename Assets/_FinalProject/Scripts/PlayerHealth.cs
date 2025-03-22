@@ -2,42 +2,94 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(AudioSource))]
 public class PlayerHealth : MonoBehaviour
 {
     public static bool IsAlive{get; private set;}
-    public int startingHealth = 100;
-    private int currentHealth = 100;
+    public int maxHealth = 100;
+    private int CurrentHealth {get; set;} = 100;
+
+    [Header("UI Settings")]
+
+    public Slider healthSlider;
+
+    [Header("SFX Settings")]
+    public AudioClip damage1Sfx;
+    public AudioClip damage2Sfx;
+    public AudioClip damage3Sfx;
+    public AudioClip heal1Sfx;
+    public AudioClip heal2Sfx;
 
     [Header("References")]
     private Animator animator;
+    private AudioSource audioSource;
 
     void Awake()
     {
         animator = GetComponent<Animator>();
-        currentHealth = startingHealth;
+        audioSource = GetComponent<AudioSource>();
+        
+        CurrentHealth = maxHealth;
         IsAlive = true;
+        UpdateHealthSlider();
+    }
+    void UpdateHealthSlider()
+    {
+        if (healthSlider)
+        {
+            healthSlider.value = CurrentHealth;
+        }
     }
 
     public void HealDamage(int heal)
     {
-        currentHealth += heal;
-        currentHealth = Mathf.Clamp(currentHealth, 0, startingHealth);
-        HandleAnimation();
+        if (audioSource)
+        {
+            float percentageOfHealthHealed = (heal / (float)maxHealth) * 100f; // Convert to float to prevent rounding issues
 
-        Debug.Log("current health " + currentHealth);
+            if (percentageOfHealthHealed <= 50f)
+                PlaySoundEffect(heal2Sfx);
+            else
+                PlaySoundEffect(heal1Sfx);
+        }
+
+        CurrentHealth += heal;
+        CurrentHealth = Mathf.Clamp(CurrentHealth, 0, maxHealth);
+
+        HandleAnimation();
+        UpdateHealthSlider();
+
+        Debug.Log("current health " + CurrentHealth);
     }
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        currentHealth = Mathf.Clamp(currentHealth, 0, startingHealth);
-        HandleAnimation();
+        if (audioSource)
+        {
+            float percentageOfHealthTaken = (damage / (float)maxHealth) * 100f; // Convert to float to prevent rounding issues
 
-        Debug.Log("current health " + currentHealth);
-        if (currentHealth <= 0 && IsAlive)
+            if (percentageOfHealthTaken <= 50f)
+                PlaySoundEffect(damage2Sfx);
+            else
+                PlaySoundEffect(damage1Sfx);
+        }
+
+        if (animator)
+            animator.SetTrigger("isHit");
+
+        CurrentHealth -= damage;
+        CurrentHealth = Mathf.Clamp(CurrentHealth, 0, maxHealth);
+        
+        HandleAnimation();
+        UpdateHealthSlider();
+
+        Debug.Log("current health " + CurrentHealth);
+
+        if (CurrentHealth <= 0 && IsAlive)
         {
             PlayerDies();
         }
+        
     }
 
     public void PlayerDies() 
@@ -46,9 +98,15 @@ public class PlayerHealth : MonoBehaviour
         IsAlive = false;
     }
 
+    void PlaySoundEffect(AudioClip sfx) 
+    {
+        if (sfx)
+            audioSource.PlayOneShot(sfx);
+    }
+
     void HandleAnimation() 
     {
-        float energyLevels = Mathf.Clamp(((float)currentHealth / startingHealth) * 100f, 0f, 100f);
+        float energyLevels = Mathf.Clamp(((float)CurrentHealth / maxHealth) * 100f, 0f, 100f);
 
         animator.SetFloat("energyLevels", energyLevels);
     }
