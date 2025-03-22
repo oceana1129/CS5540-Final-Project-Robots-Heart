@@ -5432,7 +5432,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63a3c18bc7ed6d047b167bbe36559823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredPadsToRead: 1
 --- !u!4 &267692862
 Transform:
   m_ObjectHideFlags: 0
@@ -13137,8 +13136,6 @@ MonoBehaviour:
   interactionRange: 2
   instructionTextUI: {fileID: 1121072714}
   infoTextUI: {fileID: 734440481}
-  lockedDoorMessageUI: {fileID: 1553214758}
-  levelManager: {fileID: 267692861}
 --- !u!1 &687449476 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e03cbcdcee58c8e4ab6df222b32f4812,
@@ -13828,7 +13825,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 117.11301, y: -61.79, z: 180}
+  m_LocalEulerAnglesHint: {x: 168.97299, y: -31.408, z: 180}
 --- !u!114 &701246530
 MonoBehaviour:
   m_ObjectHideFlags: 0
