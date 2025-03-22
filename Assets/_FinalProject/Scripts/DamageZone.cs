@@ -1,10 +1,9 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class DamageZone : MonoBehaviour
 {
-    [Header("DamageSettings")]
+    [Header("Damage Settings")]
     public bool instantKill = false;        // toggle for instant death 
     public int damageAmount = 1;            // damage taken when hitting damage zone
     public float damageCooldown = 1.0f;    // cooldown time in seconds

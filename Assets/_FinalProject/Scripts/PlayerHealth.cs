@@ -10,9 +10,11 @@ public class PlayerHealth : MonoBehaviour
     private int CurrentHealth {get; set;} = 100;
 
     [Header("SFX Settings")]
-    public AudioClip damage1;
-    public AudioClip damage2;
-    public AudioClip damage3;
+    public AudioClip damage1Sfx;
+    public AudioClip damage2Sfx;
+    public AudioClip damage3Sfx;
+    public AudioClip heal1Sfx;
+    public AudioClip heal2Sfx;
 
     [Header("References")]
     private Animator animator;
@@ -29,6 +31,16 @@ public class PlayerHealth : MonoBehaviour
 
     public void HealDamage(int heal)
     {
+        if (audioSource)
+        {
+            float percentageOfHealthHealed = (heal / (float)maxHealth) * 100f; // Convert to float to prevent rounding issues
+
+            if (percentageOfHealthHealed <= 50f)
+                PlaySoundEffect(heal2Sfx);
+            else
+                PlaySoundEffect(heal1Sfx);
+        }
+
         CurrentHealth += heal;
         CurrentHealth = Mathf.Clamp(CurrentHealth, 0, maxHealth);
         HandleAnimation();
@@ -39,13 +51,24 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         if (audioSource)
-            PlaySoundEffect(damage);
+        {
+            float percentageOfHealthTaken = (damage / (float)maxHealth) * 100f; // Convert to float to prevent rounding issues
+
+            if (percentageOfHealthTaken <= 50f)
+                PlaySoundEffect(damage2Sfx);
+            else
+                PlaySoundEffect(damage1Sfx);
+        }
+
+        if (animator)
+            animator.SetTrigger("isHit");
 
         CurrentHealth -= damage;
         CurrentHealth = Mathf.Clamp(CurrentHealth, 0, maxHealth);
         HandleAnimation();
 
         Debug.Log("current health " + CurrentHealth);
+        
         if (CurrentHealth <= 0 && IsAlive)
         {
             PlayerDies();
@@ -58,15 +81,10 @@ public class PlayerHealth : MonoBehaviour
         IsAlive = false;
     }
 
-    void PlaySoundEffect(int damage) 
+    void PlaySoundEffect(AudioClip sfx) 
     {
-        float percentageOfHealthTaken = (damage / (float)maxHealth) * 100f; // Convert to float to prevent rounding issues
-
-        if (percentageOfHealthTaken <= 50f)
-            audioSource.PlayOneShot(damage2);
-        else
-            audioSource.PlayOneShot(damage1);
-            
+        if (sfx)
+            audioSource.PlayOneShot(sfx);
     }
 
     void HandleAnimation() 
