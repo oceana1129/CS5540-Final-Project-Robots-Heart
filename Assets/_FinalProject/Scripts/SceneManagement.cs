@@ -4,15 +4,13 @@ using UnityEngine.SceneManagement;
 public class SceneManagement : MonoBehaviour
 {
     [Header("Scene Settings")]
-    public string nextSceneName;
-    public string firstSceneName;
     private AudioSource audioSource;
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
-        if (!audioSource)
-            Debug.LogError("no audio source attacjed to SceneManagement");
+        // audioSource = GetComponent<AudioSource>();
+        // if (!audioSource)
+        //     Debug.LogError("no audio source attacjed to SceneManagement");
     }
 
 
@@ -37,10 +35,7 @@ public class SceneManagement : MonoBehaviour
     /// </summary>
     public void LoadNextScene()
     {
-        if (!string.IsNullOrEmpty(nextSceneName))
-            SceneManager.LoadScene(nextSceneName);
-        else
-            Debug.LogWarning("No next scene specified.");
+        Debug.LogWarning("No next scene specified.");
     }
 
     /// <summary>
@@ -56,10 +51,7 @@ public class SceneManagement : MonoBehaviour
     /// </summary>
     public void RestartGame()
     {
-        if (!string.IsNullOrEmpty(firstSceneName))
-            SceneManager.LoadScene(firstSceneName);
-        else
-            Debug.LogError("First scene name is not set in the inspector.");
+        Debug.LogError("No next scene specified.");
     }
 
     private void PlaySound(AudioClip clip)
