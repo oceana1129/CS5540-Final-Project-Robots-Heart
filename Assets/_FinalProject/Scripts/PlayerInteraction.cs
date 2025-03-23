@@ -121,4 +121,14 @@ public class PlayerInteraction : MonoBehaviour
             currentInteractable = null;
         }
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+
+        Vector3 rayOrigin = transform.position + Vector3.up;
+        Vector3 rayDirection = transform.forward;
+
+        Gizmos.DrawRay(rayOrigin, rayDirection * interactionRange);
+    }
 }
