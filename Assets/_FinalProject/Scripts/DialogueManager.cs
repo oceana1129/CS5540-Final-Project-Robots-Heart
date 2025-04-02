@@ -2,8 +2,8 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem;
 using TMPro;
-using UnityEngine.UI;
 using System;
+
 /// <summary>
 /// Goes through all available dialogue in the dialogue manager
 /// 
@@ -34,13 +34,16 @@ public class DialogueManager : MonoBehaviour
 
         [Header("Single Dialogue Settings")]
         public string characterName = "AURA";
+        // public bool hasBranch;
         public Line[] lines;
+        
         public enum Emotion { Neutral, Angry, Happy }
         public enum ScrollSpeed { Slow, Medium, Fast, ExtraFast };
 
     }
 
     [Header("Dialogue Trigger Settings")]
+    public int restartAtDialogueIndex = 0;
     public bool canTriggerDialogueChain = true;    // can this dialogue be triggered?
     public bool TriggerDialogueChainByEnteringArea = false;
     public bool TriggerDialogueChainByInteraction = false;
@@ -48,18 +51,24 @@ public class DialogueManager : MonoBehaviour
     
     [Header("Dialogue Display UI Settings")]
     public GameObject dialogueUIPrefab;
-    public GameObject dialogueBox;
-    public TextMeshProUGUI dialogueText;
-    public TextMeshProUGUI characterNameText;
-    public GameObject nextButton;
+    public float animationDuration = 0.2f;  // animation duration
 
     [Header("All Dialogue")]
     /// <summary> The dialogue chain. Made up of Dialogue which is made up of Lines. </summary>
     public Dialogue[] dialogues; 
     
+    /// /////////////////
     // private variables
     [Header("Dialogue UI")]
     GameObject dialogueUIInstance;
+    private GameObject dialogueBox;
+    private TextMeshProUGUI dialogueText;
+    private TextMeshProUGUI characterNameText;
+    private GameObject nextButton;
+
+    [Header("Dialogue Audio")]
+    private AudioSource audioSource;
+    private AudioClip dialogueClickSFX;
 
     [Header("Player Inputs")]
     private PlayerInput playerInput;    // to see if player has clicked an interact/next button
@@ -76,7 +85,6 @@ public class DialogueManager : MonoBehaviour
     [Header("Position in Dialogue Chain")]
     private int currentLineIndex = 0;
     private int currentDialogueIndex = 0;
-    
 
     void Awake()
     {
@@ -88,6 +96,11 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogueUIInstance == null)
         {
+            if (dialogueUIPrefab == null)
+            {
+                Debug.LogError("Dialogue UI Prefab is not assigned!");
+                return;
+            }
             // instantiate prefab and add to variable
             dialogueUIInstance = Instantiate(dialogueUIPrefab);
 
@@ -96,9 +109,14 @@ public class DialogueManager : MonoBehaviour
             dialogueText = dialogueBox.transform.Find("DialogueText")?.GetComponent<TextMeshProUGUI>();
             characterNameText = dialogueBox.transform.Find("DialogueName")?.GetComponent<TextMeshProUGUI>();
             nextButton = dialogueBox.transform.Find("DialogueNext")?.gameObject;
+            audioSource = dialogueBox.GetComponent<AudioSource>();
+            dialogueClickSFX = audioSource.clip;
 
             if (!dialogueText || !characterNameText || !nextButton)
                 Debug.LogWarning("Some Dialogue UI elements were not found as expected.");
+
+            if (!audioSource || !dialogueClickSFX)
+                Debug.LogWarning("Some Dialogue sound elements were not found as expected.");
         }
     }
 
@@ -168,7 +186,7 @@ public class DialogueManager : MonoBehaviour
 
         if (!dialogueUIInstance)
             FindDialogueUIElements();
-            
+
         currentDialogueIndex = 0;
         dialogueChainIsActive = true;
 
@@ -256,7 +274,7 @@ public class DialogueManager : MonoBehaviour
 
         // indicates start next line
         currentLineIndex++;
-
+        PlaySoundEffect(dialogueClickSFX);
         // if there are more lines left in dialogue, type a line
         if (currentLineIndex < dialogues[currentDialogueIndex].lines.Length)
         {
@@ -278,6 +296,8 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log("End dialogue index: " + currentDialogueIndex);
         AnimateDialogueBox(false);
+        StartCoroutine(WaitForAnimation());
+
         currentDialogueIndex++;
 
         if (currentDialogueIndex >= dialogues.Length)
@@ -296,18 +316,55 @@ public class DialogueManager : MonoBehaviour
             canTriggerDialogueChain = false;
             // later save as a flag in system
         }
-        Destroy(dialogueUIInstance);
+        Destroy(dialogueUIInstance, animationDuration + 0.02f);
     }
 
     /// <summary> Animate the dialogue box if it exists </summary>
     void AnimateDialogueBox(bool state)
-    {
-        // later set things as hidden, 
-        // and make the dialogue container grow in size, 
-        // set delay until it's done
-        // do in reverse if false
+    {        
+        AnimateNextButton(false);
         if (dialogueBox != null)
-            dialogueBox.SetActive(state);
+            StartCoroutine(AnimateDialogueBoxScale(state));
+    }
+
+    IEnumerator AnimateDialogueBoxScale(bool state)
+    {
+        RectTransform rectTransform = dialogueBox.GetComponent<RectTransform>();  // get RectTransform
+
+        float targetHeight = state ? 120f : 0f;  // target height: 120 if showing, 0 if hiding
+        float initialHeight = rectTransform.sizeDelta.y;  // current dialogue box height
+        float time = 0f;
+
+        if (!state)
+        {
+            EnableDialogueUIText(state);  // disable text
+            AnimateNextButton(state);       // disable button
+        }
+        else
+        {
+            dialogueBox.SetActive(true);  // make sure box is active before scaling
+        }
+
+        // animate the height
+        while (time < animationDuration)
+        {
+            float newHeight = Mathf.Lerp(initialHeight, targetHeight, time / animationDuration);  
+            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, newHeight);  
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        // final height applied
+        rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, targetHeight);
+
+        if (state)
+            EnableDialogueUIText(state);  // Enable the text and button after the box has fully expanded
+    }
+
+    void EnableDialogueUIText(bool state)
+    {
+        dialogueText.gameObject.SetActive(state); 
+        characterNameText.gameObject.SetActive(state); 
     }
 
     /// <summary> Animate the next button if it exists </summary>
@@ -330,8 +387,22 @@ public class DialogueManager : MonoBehaviour
         };
     }
 
+    IEnumerator WaitForAnimation()
+    {
+        yield return new WaitForSeconds(animationDuration); 
+    }
+
+    void PlaySoundEffect(AudioClip sfx) 
+    {
+        if (sfx && audioSource)
+            audioSource.PlayOneShot(sfx);
+        else
+            Debug.LogWarning("AudioSource or AudioClip is missing!");
+    }
+
+
     /// <summary> Pause other player inputs like movement </summary>
-    void PauseGameWorld() 
+    void PauseGameWorld(bool state) 
     {
         // TODO
         // implement later... to make sure player and enemies are not moving around, etc while dialogue plays
