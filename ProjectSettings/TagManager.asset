@@ -8,6 +8,7 @@ TagManager:
   - Pad
   - Door
   - Enemy
+  - DialogueUI
   layers:
   - Default
   - TransparentFX
