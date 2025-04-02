@@ -47,6 +47,7 @@ public class DialogueManager : MonoBehaviour
     public bool TriggerDialogueChainOnlyOnce = false;
     
     [Header("Dialogue Display UI Settings")]
+    public GameObject dialogueUIPrefab;
     public GameObject dialogueBox;
     public TextMeshProUGUI dialogueText;
     public TextMeshProUGUI characterNameText;
@@ -57,6 +58,8 @@ public class DialogueManager : MonoBehaviour
     public Dialogue[] dialogues; 
     
     // private variables
+    [Header("Dialogue UI")]
+    GameObject dialogueUIInstance;
 
     [Header("Player Inputs")]
     private PlayerInput playerInput;    // to see if player has clicked an interact/next button
@@ -77,36 +80,25 @@ public class DialogueManager : MonoBehaviour
 
     void Awake()
     {
-        if (!dialogueBox || !dialogueText || !characterNameText || !nextButton)
-            FindDialogueUIElements();
-        
-        if (!dialogueBox || !dialogueText || !characterNameText || !nextButton)
-        {
-            Debug.LogError("Dialogue box components are missing. Please add via the inspector");
-            return;
-        }
-
         SetUpPlayerInput();
     }
     
-    /// <summary> Find dialogue UI elements so as to not manually add them each time </summary>
+    /// <summary> Find dialogue UI elements and instantiate </summary>
     void FindDialogueUIElements()
     {
-        GameObject root = GameObject.FindGameObjectWithTag("DialogueUI");
-
-        if (root != null)
+        if (dialogueUIInstance == null)
         {
-            dialogueBox = root.transform.Find("DialogueContainer")?.gameObject;
+            // instantiate prefab and add to variable
+            dialogueUIInstance = Instantiate(dialogueUIPrefab);
+
+            // set dialogue box components
+            dialogueBox = dialogueUIInstance.transform.Find("DialogueContainer")?.gameObject;
             dialogueText = dialogueBox.transform.Find("DialogueText")?.GetComponent<TextMeshProUGUI>();
             characterNameText = dialogueBox.transform.Find("DialogueName")?.GetComponent<TextMeshProUGUI>();
             nextButton = dialogueBox.transform.Find("DialogueNext")?.gameObject;
 
             if (!dialogueText || !characterNameText || !nextButton)
                 Debug.LogWarning("Some Dialogue UI elements were not found as expected.");
-        }
-        else
-        {
-            Debug.LogError("Dialogue UI root with tag 'DialogueUI' not found.");
         }
     }
 
@@ -174,6 +166,9 @@ public class DialogueManager : MonoBehaviour
         if (dialogueChainIsActive || !canTriggerDialogueChain)
             return;
 
+        if (!dialogueUIInstance)
+            FindDialogueUIElements();
+            
         currentDialogueIndex = 0;
         dialogueChainIsActive = true;
 
@@ -219,13 +214,30 @@ public class DialogueManager : MonoBehaviour
         isTypingLine = true;
         AnimateNextButton(false); // hide next button
         dialogueText.text = ""; // set dialogue text to empty first
+
+        // custom settings
+        string formattedText = line.isSpokenOutloud ? $"\"{line.text}\"" : line.text;
         float delay = GetScrollSpeedDelay(line.scrollSpeed);    // get the scroll speed
 
-        // add a letter to the dialogue text based on scroll speed
-        foreach (char letter in line.text.ToCharArray())
+        // add a letter to the dialogue
+        Vector3[] originalPositions = new Vector3[formattedText.Length];
+        for (int i = 0; i < formattedText.Length; i++)
         {
-            // Debug.Log("writing letter " + letter);
-            dialogueText.text += letter;
+            originalPositions[i] = dialogueText.transform.position; // Store original position of text
+        }
+
+        foreach (char letter in formattedText.ToCharArray())
+        {
+            int letterIndex = dialogueText.text.Length; // get current letter index
+
+            // if angry, add shake
+            if (line.emotion == Dialogue.Emotion.Angry)
+            {
+                float shakeAmount = UnityEngine.Random.Range(-3f, 3f); // random shake range
+                dialogueText.transform.position = originalPositions[letterIndex] + new Vector3(shakeAmount, 0, 0); // shake horizontally
+            }
+
+            dialogueText.text += letter; // Add letter to the text
             yield return new WaitForSeconds(delay);
         }
 
@@ -237,7 +249,7 @@ public class DialogueManager : MonoBehaviour
     /// <summary> Player triggers next line or dialogue </summary>
     public void OnNextPressed()
     {
-        Debug.Log("On next pressed");
+        // Debug.Log("On next pressed");
         // later add a skip function
         // for now don't do anything
         if (isTypingLine) return;
@@ -284,6 +296,7 @@ public class DialogueManager : MonoBehaviour
             canTriggerDialogueChain = false;
             // later save as a flag in system
         }
+        Destroy(dialogueUIInstance);
     }
 
     /// <summary> Animate the dialogue box if it exists </summary>
