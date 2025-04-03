@@ -201,6 +201,7 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log("Started new dialogue index: " + currentDialogueIndex);
 
+
         if (dialogues == null || dialogues.Length == 0)
         {
             Debug.LogWarning("No dialogue found.");
@@ -233,6 +234,7 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("Started new line index: " + currentLineIndex);
         // start typing line
         isTypingLine = true;
+        OnDisable();
         AnimateNextButton(false); // hide next button
         dialogueText.text = ""; // set dialogue text to empty first
 
@@ -265,6 +267,7 @@ public class DialogueManager : MonoBehaviour
         // no longer typing
         isTypingLine = false;
         AnimateNextButton(true); // show "Next" button once line is done
+        OnEnable();
     }
 
     /// <summary> Player triggers next line or dialogue </summary>
