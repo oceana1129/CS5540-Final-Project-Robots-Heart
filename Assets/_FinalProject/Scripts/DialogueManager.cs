@@ -162,6 +162,7 @@ public class DialogueManager : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRadius = true;
+            OnEnable();
         }
 
         if (TriggerDialogueChainByEnteringArea && canTriggerDialogueChain && !dialogueChainIsActive)
@@ -312,6 +313,7 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log("End dialogue chain");
         dialogueChainIsActive = false;
+        OnDisable();
         PauseGameWorld(false);
 
         if (TriggerDialogueChainOnlyOnce)
@@ -319,6 +321,7 @@ public class DialogueManager : MonoBehaviour
             canTriggerDialogueChain = false;
             // later save as a flag in system
         }
+
         Destroy(dialogueUIInstance, animationDuration + 0.02f);
     }
 
@@ -403,6 +406,14 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("AudioSource or AudioClip is missing!");
     }
 
+    void OnEnable()
+    {
+        playerInput.Controls.Enable();
+    }
+
+    void OnDisable() {
+        playerInput.Controls.Disable();
+    }
 
     /// <summary> Pause other player inputs like movement </summary>
     void PauseGameWorld(bool state) 
