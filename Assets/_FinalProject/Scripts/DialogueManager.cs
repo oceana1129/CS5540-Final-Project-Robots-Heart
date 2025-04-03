@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.InputSystem;
 using TMPro;
 using System;
+using Unity.VisualScripting;
 
 /// <summary>
 /// Goes through all available dialogue in the dialogue manager
@@ -34,7 +35,7 @@ public class DialogueManager : MonoBehaviour
 
         [Header("Single Dialogue Settings")]
         public string characterName = "AURA";
-        // public bool hasBranch;
+        public bool hasBranch;
         public Line[] lines;
         
         public enum Emotion { Neutral, Angry, Happy }
@@ -163,7 +164,7 @@ public class DialogueManager : MonoBehaviour
             isPlayerInRadius = true;
         }
 
-        if (TriggerDialogueChainByEnteringArea && canTriggerDialogueChain)
+        if (TriggerDialogueChainByEnteringArea && canTriggerDialogueChain && !dialogueChainIsActive)
         {
             Debug.Log("Triggered by entering dialogue zone");
             TriggerDialogueChain();
@@ -187,7 +188,8 @@ public class DialogueManager : MonoBehaviour
         if (!dialogueUIInstance)
             FindDialogueUIElements();
 
-        currentDialogueIndex = 0;
+        PauseGameWorld(true);
+        currentDialogueIndex = 0; // TODO change this so it is set to a variable instead
         dialogueChainIsActive = true;
 
         StartDialogue();
@@ -310,6 +312,7 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log("End dialogue chain");
         dialogueChainIsActive = false;
+        PauseGameWorld(false);
 
         if (TriggerDialogueChainOnlyOnce)
         {
@@ -408,5 +411,14 @@ public class DialogueManager : MonoBehaviour
         // implement later... to make sure player and enemies are not moving around, etc while dialogue plays
         // will likely need to get all gameobjects with a tag like (player, npc, enemy)
         // assign a public method called PauseCharacter(bool state) and make sure they don't move
+        PlayerMovement playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();  // Example: PlayerMovement component
+        if (playerMovement != null)
+        {
+            playerMovement.PauseMovement(state);
+        }
+        else
+        {
+            Debug.LogWarning("Cannot find player movement");
+        }
     }
 }
