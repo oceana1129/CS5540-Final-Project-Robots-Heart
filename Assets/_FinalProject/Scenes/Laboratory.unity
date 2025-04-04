@@ -13887,6 +13887,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5908549014929374048, guid: 197bb6ba10e461e4db401bc493408e1e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129231580051773893, guid: 197bb6ba10e461e4db401bc493408e1e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8028947568676085615, guid: 197bb6ba10e461e4db401bc493408e1e,
         type: 3}
       propertyPath: m_Pivot.x
@@ -21368,29 +21378,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1220849583}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1222884370 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5567782405139682071, guid: 68f2287183fce284bbd1f66254ce7ab8,
-    type: 3}
-  m_PrefabInstance: {fileID: 7161480926255198730}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1222884371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1222884370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63c3318da193d864a929053409ecea77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionRange: 2
-  instructionTextUI: {fileID: 1121072714}
-  infoTextUI: {fileID: 734440481}
-  lockedDoorMessageUI: {fileID: 1553214758}
-  levelManager: {fileID: 267692861}
 --- !u!1 &1234097478
 GameObject:
   m_ObjectHideFlags: 0
@@ -39120,11 +39107,7 @@ PrefabInstance:
     - {fileID: 5696051890091311042, guid: 68f2287183fce284bbd1f66254ce7ab8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5567782405139682071, guid: 68f2287183fce284bbd1f66254ce7ab8,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1222884371}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68f2287183fce284bbd1f66254ce7ab8, type: 3}
 --- !u!1001 &7445462500191107302
 PrefabInstance:
@@ -39272,6 +39255,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8565158754443312492, guid: 3cbaef9e41c58a645849291f39147bd0,
+        type: 3}
+      propertyPath: requiredPadsToRead
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -39483,6 +39471,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Door_14_White
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699279518164102497, guid: f4a16cffaf9f5564ea1429916f876891,
+        type: 3}
+      propertyPath: m_Name
+      value: DoorBackground
       objectReference: {fileID: 0}
     - target: {fileID: 8057264571961672496, guid: f4a16cffaf9f5564ea1429916f876891,
         type: 3}
