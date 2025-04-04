@@ -7,15 +7,21 @@ public class DoorBehavior : MonoBehaviour
 {
     public bool open;
     public bool isUnlocked = false;
+    public GameObject spawnBackground;
     public float smooth = 1.0f;
     float DoorOpenAngle = -90.0f;
     float DoorCloseAngle = 0.0f;
-    public AudioSource asource;
+    
     public AudioClip openDoor, closeDoor;
+    AudioSource asource;
 
     void Start()
     {
         asource = GetComponent<AudioSource>();
+        if (!asource)
+            Debug.LogError("audio source missing from door");
+        
+        spawnBackground.SetActive(false);
     }
 
     void Update()
@@ -39,6 +45,7 @@ public class DoorBehavior : MonoBehaviour
             open = !open;
             asource.clip = open ? openDoor : closeDoor;
             asource.Play();
+            spawnBackground.SetActive(true);
         }
     }
 
