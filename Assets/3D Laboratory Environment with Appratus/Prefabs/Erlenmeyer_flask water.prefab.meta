@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: acf5b187f5df5e74493297af5526da97
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220212
+  packageName: Chemistry Lab Items Pack
+  packageVersion: 1.0
+  assetPath: Assets/3D Laboratory Environment with Appratus/Prefabs/Erlenmeyer_flask
+    water.prefab
+  uploadId: 494867
