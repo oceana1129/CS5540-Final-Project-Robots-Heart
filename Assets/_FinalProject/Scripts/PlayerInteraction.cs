@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
+// This script handles player interactions with pads and doors in the game.
 public class PlayerInteraction : MonoBehaviour
 {
     [Header("Interaction Settings")]
@@ -24,6 +25,7 @@ public class PlayerInteraction : MonoBehaviour
         ClearInteractionIfOutOfRange();
     }
 
+    // Checks for interaction with pads and doors within the interaction range
     void CheckForInteraction()
     {
         RaycastHit hit;
@@ -48,6 +50,7 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    // Handles interaction with pads and toggles the info text UI (usually a pad)
     void HandlePadInteraction(Transform pad)
     {
         if (instructionTextUI != null) instructionTextUI.SetActive(true);
@@ -71,6 +74,7 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    // Handles interaction with doors and checks if they are unlocked
     void HandleDoorInteraction(Transform doorTransform)
     {
         if (instructionTextUI != null) instructionTextUI.SetActive(true);
@@ -98,6 +102,7 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    // Hides the locked door message after a delay
     IEnumerator HideLockedDoorMessageAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -107,11 +112,13 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    // Resets the interaction UI when not interacting with any object
     void ResetInteractionUI()
     {
         if (instructionTextUI != null) instructionTextUI.SetActive(false);
     }
 
+    // Clears the current interactable object if it is out of range
     void ClearInteractionIfOutOfRange()
     {
         if (currentInteractable != null && Vector3.Distance(transform.position, currentInteractable.position) > interactionRange)
@@ -122,6 +129,7 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    // Draws a gizmo in the editor to visualize the interaction range
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
@@ -132,3 +140,4 @@ public class PlayerInteraction : MonoBehaviour
         Gizmos.DrawRay(rayOrigin, rayDirection * interactionRange);
     }
 }
+
