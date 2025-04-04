@@ -410,6 +410,7 @@ MonoBehaviour:
   animationDuration: 0.2
   dialogues:
   - characterName: 1
+    hasBranch: 0
     lines:
     - isSpokenOutloud: 1
       emotion: 0
@@ -424,6 +425,7 @@ MonoBehaviour:
       scrollSpeed: 1
       text: Line 3
   - characterName: 2
+    hasBranch: 0
     lines:
     - isSpokenOutloud: 1
       emotion: 0
@@ -637,6 +639,7 @@ MonoBehaviour:
   animationDuration: 0.2
   dialogues:
   - characterName: 
+    hasBranch: 0
     lines:
     - isSpokenOutloud: 1
       emotion: 0
@@ -651,6 +654,7 @@ MonoBehaviour:
       scrollSpeed: 1
       text: Line 3
   - characterName: 2
+    hasBranch: 0
     lines:
     - isSpokenOutloud: 1
       emotion: 0
@@ -1309,188 +1313,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1001 &867593943
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8505032083176376874, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505032083176376874, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505032083176376874, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505032083176376874, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505032083176376874, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.013301735
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505032083176376874, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.39469576
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505032083176376874, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505032083176376874, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505032083176376874, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505032083176376874, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505032083176376874, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505032083176376874, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505032083176376874, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505032083176376874, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9028627854349766800, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_Name
-      value: beaker_liquid (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 9117019563601367172, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 9117019563601367172, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9117019563601367172, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9028627854349766800, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 867593945}
-    - targetCorrespondingSourceObject: {fileID: 9028627854349766800, guid: 24c728c68968f6447b856666f27564a5,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 867593950}
-  m_SourcePrefab: {fileID: 100100000, guid: 24c728c68968f6447b856666f27564a5, type: 3}
---- !u!1 &867593944 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9028627854349766800, guid: 24c728c68968f6447b856666f27564a5,
-    type: 3}
-  m_PrefabInstance: {fileID: 867593943}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &867593945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 867593944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07ec7b739779b0d429761b466c295958, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instantKill: 0
-  damageAmount: 5
-  damageCooldown: 1
-  destroyOnContact: 1
-  destroyTimer: 0.3
---- !u!114 &867593950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 867593944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7076969c9b2387446b9de1fa2e194cf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  restartAtDialogueIndex: 0
-  canTriggerDialogueChain: 1
-  TriggerDialogueChainByEnteringArea: 1
-  TriggerDialogueChainByInteraction: 0
-  TriggerDialogueChainOnlyOnce: 0
-  dialogueUIPrefab: {fileID: 0}
-  animationDuration: 0.2
-  dialogues:
-  - characterName: 1
-    lines:
-    - isSpokenOutloud: 1
-      emotion: 0
-      scrollSpeed: 1
-      text: Line 1
-    - isSpokenOutloud: 1
-      emotion: 0
-      scrollSpeed: 1
-      text: Line 2
-    - isSpokenOutloud: 1
-      emotion: 0
-      scrollSpeed: 1
-      text: Line 3
-  - characterName: 2
-    lines:
-    - isSpokenOutloud: 1
-      emotion: 0
-      scrollSpeed: 1
-      text: Line 1-2 Slow
-    - isSpokenOutloud: 1
-      emotion: 0
-      scrollSpeed: 1
-      text: Line 2-2 Medium
-    - isSpokenOutloud: 1
-      emotion: 0
-      scrollSpeed: 1
-      text: Line 3-2 Fast
 --- !u!1001 &1066122886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1623,7 +1445,7 @@ MonoBehaviour:
   instantHeal: 1
   healAmount: 1
   healCooldown: 1
-  destroyOnContact: 1
+  destroyOnContact: 0
   destroyTimer: 0.3
 --- !u!114 &1066122893
 MonoBehaviour:
@@ -1642,10 +1464,12 @@ MonoBehaviour:
   TriggerDialogueChainByEnteringArea: 1
   TriggerDialogueChainByInteraction: 0
   TriggerDialogueChainOnlyOnce: 0
-  dialogueUIPrefab: {fileID: 0}
+  dialogueUIPrefab: {fileID: 1180496288310452866, guid: 01faa2bda7953084fac1f48cea33c4af,
+    type: 3}
   animationDuration: 0.2
   dialogues:
-  - characterName: 1
+  - characterName: AURA
+    hasBranch: 0
     lines:
     - isSpokenOutloud: 1
       emotion: 0
@@ -2389,7 +2213,7 @@ MonoBehaviour:
   instantKill: 0
   damageAmount: 60
   damageCooldown: 1
-  destroyOnContact: 1
+  destroyOnContact: 0
   destroyTimer: 0.3
 --- !u!114 &1462411498
 MonoBehaviour:
@@ -2413,16 +2237,18 @@ MonoBehaviour:
   animationDuration: 0.2
   dialogues:
   - characterName: 
+    hasBranch: 0
     lines:
     - isSpokenOutloud: 0
       emotion: 0
-      scrollSpeed: 0
+      scrollSpeed: 2
       text: You feel a sharp burning pain rise through your circuits.
     - isSpokenOutloud: 0
       emotion: 0
-      scrollSpeed: 0
+      scrollSpeed: 2
       text: You wince in pain.
   - characterName: AURA
+    hasBranch: 0
     lines:
     - isSpokenOutloud: 1
       emotion: 1
@@ -2468,6 +2294,7 @@ MonoBehaviour:
   animationDuration: 0.2
   dialogues:
   - characterName: 1
+    hasBranch: 0
     lines:
     - isSpokenOutloud: 1
       emotion: 1
@@ -2482,6 +2309,7 @@ MonoBehaviour:
       scrollSpeed: 1
       text: Line 3
   - characterName: 2
+    hasBranch: 0
     lines:
     - isSpokenOutloud: 1
       emotion: 0
@@ -5022,7 +4850,6 @@ SceneRoots:
   - {fileID: 586528908}
   - {fileID: 1806528641}
   - {fileID: 283546363}
-  - {fileID: 867593943}
   - {fileID: 1066122886}
   - {fileID: 1095448041}
   - {fileID: 3027937484791476147}
