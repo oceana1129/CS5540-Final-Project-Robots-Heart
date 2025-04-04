@@ -13875,7 +13875,7 @@ PrefabInstance:
     - target: {fileID: 2328432767374725162, guid: 197bb6ba10e461e4db401bc493408e1e,
         type: 3}
       propertyPath: m_Name
-      value: Canvas (1)
+      value: Canvas (UI)
       objectReference: {fileID: 0}
     - target: {fileID: 4971675843122202815, guid: 197bb6ba10e461e4db401bc493408e1e,
         type: 3}
@@ -24262,7 +24262,7 @@ GameObject:
   - component: {fileID: 1407975546}
   - component: {fileID: 1407975545}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Canvas (Interaction)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
