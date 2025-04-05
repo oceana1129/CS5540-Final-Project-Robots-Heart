@@ -2891,8 +2891,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114024263972142150, guid: b5a5a17dc3a6d9e47bd468828a2dec34,
         type: 3}
+      propertyPath: rollSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114024263972142150, guid: b5a5a17dc3a6d9e47bd468828a2dec34,
+        type: 3}
       propertyPath: isUnlocked
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114024263972142150, guid: b5a5a17dc3a6d9e47bd468828a2dec34,
+        type: 3}
+      propertyPath: slideSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114024263972142150, guid: b5a5a17dc3a6d9e47bd468828a2dec34,
+        type: 3}
+      propertyPath: rollDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114024263972142150, guid: b5a5a17dc3a6d9e47bd468828a2dec34,
+        type: 3}
+      propertyPath: slideDistance
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114024263972142150, guid: b5a5a17dc3a6d9e47bd468828a2dec34,
         type: 3}
@@ -3469,6 +3489,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63a3c18bc7ed6d047b167bbe36559823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMiloObjective: 0
+  isReadingLogsObjective: 0
   requiredPadsToRead: 0
 --- !u!4 &1768340123
 Transform:
