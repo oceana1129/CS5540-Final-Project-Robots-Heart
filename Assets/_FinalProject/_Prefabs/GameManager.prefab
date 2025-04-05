@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63a3c18bc7ed6d047b167bbe36559823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMiloObjective: 0
+  isReadingLogsObjective: 0
   requiredPadsToRead: 0
 --- !u!1 &6110147090946472919
 GameObject:
@@ -54,6 +56,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2553411615536868364}
+  - component: {fileID: 8664615299617299757}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -79,6 +82,18 @@ Transform:
   - {fileID: 3881167661415366080}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8664615299617299757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6110147090946472919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96bfe2b57e1acc43ae6fa8060fa0d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9042858701716763368
 GameObject:
   m_ObjectHideFlags: 0
