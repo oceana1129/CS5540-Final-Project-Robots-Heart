@@ -39,6 +39,10 @@ public class PlayerInteraction : MonoBehaviour
             {
                 HandleDoorInteraction(hit.transform);
             }
+            else if (hit.transform.CompareTag("Milo"))
+            {
+                HandleMiloInteraction(hit.transform);
+            }
             else
             {
                 ResetInteractionUI();
@@ -98,6 +102,22 @@ public class PlayerInteraction : MonoBehaviour
                         StartCoroutine(HideLockedDoorMessageAfterDelay(2f));
                     }
                 }
+            }
+        }
+    }
+
+    void HandleMiloInteraction(Transform miloTransform)
+    {
+        if (instructionTextUI != null) instructionTextUI.SetActive(true);
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Animator miloAnimator = miloTransform.GetComponent<Animator>();
+            if (miloAnimator != null)
+            {
+                miloAnimator.SetBool("Open_Anim", true);
+                if (instructionTextUI != null) instructionTextUI.SetActive(false);
+                currentInteractable = null;
             }
         }
     }
