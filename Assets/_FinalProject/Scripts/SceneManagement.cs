@@ -31,6 +31,14 @@ public class SceneManagement : MonoBehaviour
     }
 
     /// <summary>
+    /// Loads a scene by its name
+    /// </summary>
+    public void LoadSceneByIndex(int index)
+    {
+        SceneManager.LoadScene(index);
+    }
+
+    /// <summary>
     /// Loads the next scene.
     /// </summary>
     public void LoadNextScene()
