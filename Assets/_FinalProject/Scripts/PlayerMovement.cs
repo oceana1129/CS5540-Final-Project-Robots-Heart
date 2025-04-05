@@ -35,6 +35,11 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController characterController;
     private Animator animator;
     private AudioSource audioSource;
+
+    // Public getters for Milo animation
+    public bool IsRunPressed => isRunPressed;
+    public bool IsMovementPressed => isMovementPressed;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -86,6 +91,7 @@ public class PlayerMovement : MonoBehaviour
         currentRunMovement.x = currentMovementInput.x * runSpeed;
         currentRunMovement.z = currentMovementInput.y * runSpeed;
 
+        // check if the player is moving
         isMovementPressed = currentMovementInput.sqrMagnitude > 0.01f;
     }
 
@@ -189,3 +195,4 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 }
+
