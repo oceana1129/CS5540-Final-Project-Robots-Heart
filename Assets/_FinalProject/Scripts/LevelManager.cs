@@ -6,7 +6,7 @@ public class LevelManager : MonoBehaviour
     // tracks the number of objectives to be completed to unlock the door
     // requiredPadsToRead should be set to the number of pads
     // in the scene in the inspection
-    public int requiredPadsToRead;
+    public int requiredPadsToRead = 0;
     private int padsRead;
     private HashSet<Transform> readPads;
 
