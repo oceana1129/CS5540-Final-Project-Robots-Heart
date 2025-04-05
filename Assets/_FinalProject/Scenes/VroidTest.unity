@@ -565,6 +565,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1462411498}
+    - targetCorrespondingSourceObject: {fileID: 9028627854349766800, guid: 24c728c68968f6447b856666f27564a5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1462411499}
   m_SourcePrefab: {fileID: 100100000, guid: 24c728c68968f6447b856666f27564a5, type: 3}
 --- !u!114 &334087349 stripped
 MonoBehaviour:
@@ -2164,6 +2168,24 @@ MonoBehaviour:
       emotion: 1
       scrollSpeed: 0
       text: Ouch! That hurt!
+--- !u!114 &1462411499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462411492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 681b33415ad175c419669dc3e00a53a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagID: vroid_test_beaker_damage
+  requiredItemID: 
+  disableIfFlagged: 0
+  requiresTriggerEnter: 1
+  requiresInteract: 0
+  requiresAnotherItem: 0
 --- !u!1 &1670248167
 GameObject:
   m_ObjectHideFlags: 0
