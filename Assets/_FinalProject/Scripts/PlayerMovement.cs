@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement Settings")]
+    public bool canMove = false;
     public float speed = 1.0f;
     public float runSpeed = 3.0f;
     public float jumpHeight = 2.0f;
@@ -170,5 +171,21 @@ public class PlayerMovement : MonoBehaviour
 
     void OnDisable() {
         playerInput.Controls.Disable();
+    }
+
+    public void PauseMovement(bool pause)
+    {
+        Debug.Log("pausing movement " + !pause);
+        canMove = !pause;
+
+        // Optionally, you can freeze the player position by setting velocity to 0
+        if (canMove)
+        {
+            OnEnable();
+        }
+        else
+        {
+            OnDisable();
+        }
     }
 }
