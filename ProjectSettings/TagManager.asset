@@ -9,6 +9,7 @@ TagManager:
   - Door
   - Enemy
   - DialogueUI
+  - Milo
   layers:
   - Default
   - TransparentFX
