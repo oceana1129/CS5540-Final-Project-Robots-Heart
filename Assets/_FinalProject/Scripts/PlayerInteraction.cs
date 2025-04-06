@@ -106,6 +106,7 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    // Handles Milo interaction and opens the door
     void HandleMiloInteraction(Transform miloTransform)
     {
         if (instructionTextUI != null) instructionTextUI.SetActive(true);
@@ -117,7 +118,12 @@ public class PlayerInteraction : MonoBehaviour
             {
                 miloAnimator.SetBool("Open_Anim", true);
                 if (instructionTextUI != null) instructionTextUI.SetActive(false);
-                currentInteractable = null;
+
+                if (infoTextUI != null)
+                {
+                    infoTextUI.SetActive(!infoTextUI.activeSelf);
+                    currentInteractable = infoTextUI.activeSelf ? miloTransform : null;
+                }
             }
         }
     }
