@@ -8,19 +8,22 @@ public class FlagInteractionBehavior : MonoBehaviour
 {
     [Header("Flag String Settings")]
     public string flagID;
+    public bool monitorFlagsContinuously = false;
 
     [Header("If Flag Need Another Flag")]
     public string requiredItemID;
+    public bool requiresAnotherItem = false;    // requires an another item to be flagged
 
     [Header("Disable If Item Is Flagged")]
-    public bool disableIfFlagged = false;   // disable the object this is attached to if flagged
+    public bool disableIfFlagged = false;   // disable the object this is attached to is flagged
+    public bool disableOnLoadIfFlagged = false; // diable the object on load if flagged
     public bool disableIfRequiredIdFound = false;
-    public bool enableIfRequiredIdNeeded = false;   // enable this object if the required flag has been added
 
     [Header("Conditions (optional)")]
     public bool requiresTriggerEnter = false;   // requires trigger enter to be flagged
     public bool requiresInteract = false;       // requires an interaction to be flagged
-    public bool requiresAnotherItem = false;    // requires an another item to be flagged
+
+    // private
     private bool hasBeenFlagged = false; // if the item has been flagged
     private bool playerInRange = false;
 
@@ -28,7 +31,8 @@ public class FlagInteractionBehavior : MonoBehaviour
     private void Start()
     {
         // Disable or change object based on flag state
-        HandleInitialFlagChecks();
+        DisableOnLoadIfFlagged();
+        DisableIfRequiredIdFound();
     }
 
     private void Update()
@@ -37,28 +41,13 @@ public class FlagInteractionBehavior : MonoBehaviour
         {
             TryRegisterWithConditions();
         }
-    }
 
-    private void HandleInitialFlagChecks()
-    {
-        bool hasThisFlag = FlagManager.Instance.HasFlag(flagID);
-        bool hasRequiredFlag = FlagManager.Instance.HasFlag(requiredItemID);
-
-        if (disableIfFlagged && hasThisFlag)
+        if (monitorFlagsContinuously)
         {
-            gameObject.SetActive(false);
-            return;
-        }
-
-        if (disableIfRequiredIdFound && hasRequiredFlag)
-        {
-            gameObject.SetActive(false);
-            return;
-        }
-
-        if (enableIfRequiredIdNeeded && hasRequiredFlag)
-        {
-            gameObject.SetActive(true);
+            if ( !string.IsNullOrEmpty(requiredItemID))
+                DisableIfRequiredIdFound();
+            if (disableIfFlagged)
+                DisableObjectIfFlagged();
         }
     }
 
@@ -75,16 +64,35 @@ public class FlagInteractionBehavior : MonoBehaviour
 
         RegisterFlag();
     }
+    void DisableOnLoadIfFlagged() 
+    {
+        bool hasThisFlag = FlagManager.Instance.HasFlag(flagID);
+        if (disableOnLoadIfFlagged && hasThisFlag)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+    }
 
     /// <summary>
     /// Deactivate the current gameobject if it should not exist in the scene if flagged
     /// For example, could be for a key or puzzle
     /// </summary>
-    void DeactivateObjectIfFlagged()
+    void DisableObjectIfFlagged()
     {
         if (disableIfFlagged && FlagManager.Instance.HasFlag(flagID))
         {
             gameObject.SetActive(false);
+        }
+    }
+
+    void DisableIfRequiredIdFound() 
+    {
+        bool hasRequiredFlag = FlagManager.Instance.HasFlag(requiredItemID);
+        if (disableIfRequiredIdFound && hasRequiredFlag)
+        {
+            gameObject.SetActive(false);
+            return;
         }
     }
 
