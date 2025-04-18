@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public class FlagManager : MonoBehaviour
 {
+    public bool DebugRemoveFlagsFromScene = false;
     public static FlagManager Instance { get; private set; }
     private HashSet<string> flags = new HashSet<string>();
 
@@ -21,6 +22,12 @@ public class FlagManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);  // flag manager stays persistent across scenes
+
+        if (DebugRemoveFlagsFromScene)
+        {
+            RemoveAllFlags();
+        }
+        
         LoadFlags();
     }
 
@@ -70,6 +77,7 @@ public class FlagManager : MonoBehaviour
     /// </summary>
     public void RemoveAllFlags()
     {
+        Debug.LogWarning("REMOVING ALL FLAGS. Disable debug mode to ensure flags stay across scenes!");
         flags.Clear();
         SaveFlags();
     }
