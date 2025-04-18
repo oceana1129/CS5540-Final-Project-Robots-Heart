@@ -137,15 +137,17 @@ public class DialogueManager : MonoBehaviour
         // isInteractPressed = context.ReadValueAsButton();
         if (context.phase == InputActionPhase.Performed)
         {
+            Debug.Log("interact pressed during dialogue");
             isInteractPressed = true;
         }
     }
 
     void Update()
     {
-        if (TriggerDialogueChainByInteraction && isPlayerInRadius && isInteractPressed && canTriggerDialogueChain && !dialogueChainIsActive)
+        if (Input.GetKeyDown(KeyCode.E) && TriggerDialogueChainByInteraction && isPlayerInRadius && canTriggerDialogueChain && !dialogueChainIsActive)
         {
             Debug.Log("Triggered by pressing button inside dialogue zone");
+            Debug.Log("isInteractPressed: " + isInteractPressed);
             TriggerDialogueChain();
             isInteractPressed = false; // prevent retriggering
         }
