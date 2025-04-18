@@ -162,6 +162,7 @@ public class DialogueManager : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRadius = true;
+            Debug.Log("Player is in radius");
             OnEnable();
         }
 
