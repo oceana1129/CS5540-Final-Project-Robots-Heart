@@ -537,10 +537,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuPanel: {fileID: 8932364821987921350}
+  pauseContainer: {fileID: 8056539537686211851}
+  creditsContainer: {fileID: 8520370833737455314}
+  settingsContainer: {fileID: 0}
   resumeButton: {fileID: 7178437516054460013}
   quitButton: {fileID: 4070100468697638862}
   settingsButton: {fileID: 5511300616068637747}
   creditsButton: {fileID: 4534471567567633643}
+  creditsBackButton: {fileID: 1483154941758704114}
 --- !u!1 &3255796904727254422
 GameObject:
   m_ObjectHideFlags: 0
@@ -1254,7 +1258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3576823968312352608}
   m_Layer: 5
-  m_Name: SettingsContainer
+  m_Name: PauseContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1938,12 +1942,12 @@ PrefabInstance:
     - target: {fileID: 6475338301688732004, guid: 2ec77b39a93b9e240ac66f06c001a6d4,
         type: 3}
       propertyPath: m_Name
-      value: Resume
+      value: CreditsBack
       objectReference: {fileID: 0}
     - target: {fileID: 6731395239385158072, guid: 2ec77b39a93b9e240ac66f06c001a6d4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6731395239385158072, guid: 2ec77b39a93b9e240ac66f06c001a6d4,
         type: 3}
@@ -1980,6 +1984,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ec77b39a93b9e240ac66f06c001a6d4, type: 3}
+--- !u!114 &1483154941758704114 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6731395239385158072, guid: 2ec77b39a93b9e240ac66f06c001a6d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5332123153989261386}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5026128625659860236 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 882675406422576454, guid: 2ec77b39a93b9e240ac66f06c001a6d4,
