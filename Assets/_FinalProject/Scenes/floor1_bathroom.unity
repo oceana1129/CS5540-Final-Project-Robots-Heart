@@ -2539,12 +2539,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 681b33415ad175c419669dc3e00a53a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flagID: bathroom_mirror_dialogue
+  flagID: bathroom_mirror
   monitorFlagsContinuously: 0
   requiredItemID: 
   requiresAnotherItem: 0
   disableIfFlagged: 0
-  disableOnLoadIfFlagged: 0
+  disableOnLoadIfFlagged: 1
   disableIfRequiredIdFound: 0
   requiresTriggerEnter: 1
   requiresInteract: 0
