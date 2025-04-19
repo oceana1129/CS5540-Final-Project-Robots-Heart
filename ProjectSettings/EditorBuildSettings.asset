@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/_FinalProject/Scenes/floor1_bathroom.unity
     guid: 9bfd7cb7d39d5874f9063c75ee4cadb4
   - enabled: 1
-    path: Assets/_FinalProject/Scenes/floor1_Miloroom.unity
+    path: Assets/_FinalProject/Scenes/floor1_MiloRoom.unity
     guid: 774ec73648d0d954b91ce4b4e051afd2
   - enabled: 1
     path: Assets/_FinalProject/Scenes/floor1_bootupRoom.unity
@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_FinalProject/Scenes/floor1_diagnosticBay.unity
     guid: fc36cff287beec94cadc669fb484b906
+  - enabled: 1
+    path: Assets/_FinalProject/Scenes/floor1_observationRoom.unity
+    guid: a3d0081c0e922f1408e4b723df759e1d
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: 81b2b0f7b7d71024abdf993a07235c75, type: 2}
