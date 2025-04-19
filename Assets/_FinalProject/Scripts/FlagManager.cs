@@ -26,6 +26,7 @@ public class FlagManager : MonoBehaviour
         if (DebugRemoveFlagsFromScene)
         {
             RemoveAllFlags();
+            DebugRemoveFlagsFromScene = false;
         }
         
         LoadFlags();

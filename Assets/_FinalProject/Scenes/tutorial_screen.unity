@@ -869,12 +869,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 947105447}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c96bfe2b57e1acc43ae6fa8060fa0d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DebugRemoveFlagsFromScene: 1
+  DebugRemoveFlagsFromScene: 0
 --- !u!1 &1122537274
 GameObject:
   m_ObjectHideFlags: 0
