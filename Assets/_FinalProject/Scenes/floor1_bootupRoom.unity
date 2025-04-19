@@ -7134,7 +7134,7 @@ PrefabInstance:
     - target: {fileID: 2463135390296418658, guid: dc7c976697d5c91469c7eb65a6b30ccb,
         type: 3}
       propertyPath: DebugRemoveFlagsFromScene
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2553411615536868364, guid: dc7c976697d5c91469c7eb65a6b30ccb,
         type: 3}

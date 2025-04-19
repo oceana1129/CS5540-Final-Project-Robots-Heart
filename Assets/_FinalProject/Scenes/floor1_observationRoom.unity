@@ -1929,7 +1929,7 @@ MonoBehaviour:
     - isSpokenOutloud: 1
       emotion: 0
       scrollSpeed: 2
-      text: 'it''s too painful to watch. Is it right to put her through this? '
+      text: 'It''s too painful to watch. Is it right to put her through this? '
     - isSpokenOutloud: 1
       emotion: 1
       scrollSpeed: 2
@@ -4142,10 +4142,6 @@ MonoBehaviour:
       emotion: 0
       scrollSpeed: 2
       text: He's smiling, kneeling down, next to a small robot.
-    - isSpokenOutloud: 0
-      emotion: 0
-      scrollSpeed: 2
-      text: He's smiling, kneeling down, next to a small robot.
   - characterName: ??
     hasBranch: 0
     lines:
@@ -4164,7 +4160,7 @@ MonoBehaviour:
       emotion: 0
       scrollSpeed: 1
       text: You feel a tightening feeling in your chest.
-  - characterName: 
+  - characterName: AURA
     hasBranch: 0
     lines:
     - isSpokenOutloud: 1
@@ -17368,7 +17364,7 @@ PrefabInstance:
     - target: {fileID: 2463135390296418658, guid: dc7c976697d5c91469c7eb65a6b30ccb,
         type: 3}
       propertyPath: DebugRemoveFlagsFromScene
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2553411615536868364, guid: dc7c976697d5c91469c7eb65a6b30ccb,
         type: 3}
@@ -18720,13 +18716,6 @@ MonoBehaviour:
       text: "He\u2019s always the first one in the testing rooms, and the last one
         to leave. It\u2019s distracting, and it\u2019s affecting his decisions. The
         project needs rationality, not this kind of emotional attachment."
-  - characterName: AURA
-    hasBranch: 0
-    lines:
-    - isSpokenOutloud: 0
-      emotion: 0
-      scrollSpeed: 2
-      text: "Elias won\u2019t stop bringing up \u2018her.\u2019 "
 --- !u!114 &2049006127
 MonoBehaviour:
   m_ObjectHideFlags: 0
