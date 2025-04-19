@@ -88,26 +88,23 @@ public class PlayerInteraction : MonoBehaviour
             DoorBehavior door = doorTransform.GetComponent<DoorBehavior>();
             if (door != null)
             {
-                // Check if the door is unlocked
-                if (!door.isUnlocked)
+                if (door.isUnlocked)
                 {
-                    // Show locked door message if the door is locked
+                    door.OpenDoor();
+                    if (instructionTextUI != null) instructionTextUI.SetActive(false);
+                    currentInteractable = null;
+                }
+                else
+                {
                     if (lockedDoorMessageUI != null)
                     {
                         lockedDoorMessageUI.SetActive(true);
-                        StartCoroutine(HideLockedDoorMessageAfterDelay(2f)); // Hide after 2 seconds
+                        StartCoroutine(HideLockedDoorMessageAfterDelay(2f));
                     }
-                    return;
                 }
-
-                // Try to open the door if it is unlocked
-                door.TryOpenDoor();
-                if (instructionTextUI != null) instructionTextUI.SetActive(false);
-                currentInteractable = null;
             }
         }
     }
-
 
     // Handles Milo interaction and opens the door
     void HandleMiloInteraction(Transform miloTransform)
