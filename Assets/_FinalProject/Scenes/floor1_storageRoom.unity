@@ -11350,6 +11350,7 @@ GameObject:
   - component: {fileID: 2039676914}
   - component: {fileID: 2039676913}
   - component: {fileID: 2039676912}
+  - component: {fileID: 2039676916}
   m_Layer: 0
   m_Name: Electric Door (2)
   m_TagString: Door
@@ -11498,7 +11499,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.56, y: 3.72, z: 6.63}
+  m_Size: {x: 1.7, y: 3.72, z: 6.63}
   m_Center: {x: 18.84, y: 1.85, z: -8.8}
 --- !u!4 &2039676915
 Transform:
@@ -11517,6 +11518,34 @@ Transform:
   - {fileID: 1968068733}
   m_Father: {fileID: 146418206}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &2039676916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039676911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7076969c9b2387446b9de1fa2e194cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restartAtDialogueIndex: 0
+  canTriggerDialogueChain: 1
+  TriggerDialogueChainByEnteringArea: 0
+  TriggerDialogueChainByInteraction: 1
+  TriggerDialogueChainOnlyOnce: 0
+  dialogueUIPrefab: {fileID: 1180496288310452866, guid: 01faa2bda7953084fac1f48cea33c4af,
+    type: 3}
+  animationDuration: 0.2
+  dialogues:
+  - characterName: 
+    hasBranch: 0
+    lines:
+    - isSpokenOutloud: 0
+      emotion: 0
+      scrollSpeed: 2
+      text: This door leads to the Observation Room.
 --- !u!1001 &2064229125
 PrefabInstance:
   m_ObjectHideFlags: 0
