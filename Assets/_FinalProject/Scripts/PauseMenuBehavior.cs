@@ -9,6 +9,7 @@ public class PauseMenuBehavior : MonoBehaviour
     public GameObject pauseContainer;
     public GameObject creditsContainer;
     public GameObject settingsContainer;
+    public GameObject winContainer;
 
     [Header("Pause Menu Buttons")]
     public Button resumeButton;
@@ -18,6 +19,10 @@ public class PauseMenuBehavior : MonoBehaviour
 
     [Header("Credits Menu Buttons")]
     public Button creditsBackButton;
+
+    [Header("Win Menu Buttons")]
+    public Button winContinueButton;
+    public Button winRestartButton;
 
     private SceneManagement sceneManagement;
     bool isGamePaused = false;
@@ -46,7 +51,7 @@ public class PauseMenuBehavior : MonoBehaviour
 
         if (!pauseContainer || !creditsContainer)
         {
-            Debug.LogWarning("please add containers for pause menu and credits via the inspector.");
+            Debug.LogWarning("please add containers for pause menu, credits menu, and win container via the inspector.");
             return;
         }
 
@@ -76,6 +81,11 @@ public class PauseMenuBehavior : MonoBehaviour
             Debug.LogWarning("Credits menu back button not assigned via the inspector!");
             return;
         }
+
+        if (!creditsBackButton) {
+            Debug.LogWarning("Win menu buttons not assigned via the inspector!");
+            return;
+        }
     }
 
     private void AssignButtonListeners()
@@ -94,6 +104,12 @@ public class PauseMenuBehavior : MonoBehaviour
 
         if (creditsBackButton != null && creditsBackButton.onClick.GetPersistentEventCount() == 0)
             creditsBackButton.onClick.AddListener(ViewPauseMenu);
+
+        if (winContinueButton != null && winContinueButton.onClick.GetPersistentEventCount() == 0)
+            winContinueButton.onClick.AddListener(ResumeGame);
+
+        if (winRestartButton != null && winRestartButton.onClick.GetPersistentEventCount() == 0)
+            winRestartButton.onClick.AddListener(QuitGame);
     }
 
     public void ToggleGamePaused()
@@ -144,12 +160,21 @@ public class PauseMenuBehavior : MonoBehaviour
         Debug.Log("made by Oceana and Zuoyin");
         pauseContainer.SetActive(false);
         creditsContainer.SetActive(true);
+        winContainer.SetActive(false);
     }
 
     public void ViewPauseMenu() {
         Debug.Log("looking at the pause menu");
         pauseContainer.SetActive(true);
         creditsContainer.SetActive(false);
+        winContainer.SetActive(false);
+    }
+
+    public void ViewWinMenu() {
+        Debug.Log("looking at the win menu");
+        pauseContainer.SetActive(false);
+        creditsContainer.SetActive(false);
+        winContainer.SetActive(true);
     }
 
 }
