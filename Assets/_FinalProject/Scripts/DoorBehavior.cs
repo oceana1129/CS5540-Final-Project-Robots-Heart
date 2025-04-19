@@ -12,23 +12,25 @@ public class DoorBehavior : MonoBehaviour
         Rolling
     }
 
-    // isUnlocked should be false if the door is free to open
     [Header("Door General Setting")]
     public DoorType doorType;
     public bool open;
     public bool isUnlocked = false;
     public float smooth = 1.0f;
     public AudioClip openDoor, closeDoor;
-    AudioSource asource;
+    private AudioSource asource;
 
-    // spawn background used for gate doors
+    [Header("Cooldown Settings")]
+    public float cooldownTime = 2f; // Cooldown duration in seconds
+    private float lastInteractionTime = -Mathf.Infinity; // Tracks the last interaction time
+
     [Header("Door Spawn Background Setting")]
     public bool requiresSpawnBackground = true;
     public GameObject spawnBackground;
-    
+
     [Header("Wooden Door Setting")]
-    float DoorOpenAngle = -90.0f;
-    float DoorCloseAngle = 0.0f;
+    private float DoorOpenAngle = -90.0f;
+    private float DoorCloseAngle = 0.0f;
 
     [Header("Electric Door Setting")]
     public float slideDistance = 3.0f;
@@ -51,7 +53,7 @@ public class DoorBehavior : MonoBehaviour
     {
         asource = GetComponent<AudioSource>();
         if (!asource)
-            Debug.LogError("audio source missing from door");
+            Debug.LogError("Audio source missing from door");
 
         if (requiresSpawnBackground && spawnBackground != null)
         {
@@ -138,22 +140,42 @@ public class DoorBehavior : MonoBehaviour
         }
     }
 
-    public void OpenDoor()
+    public void TryOpenDoor()
     {
-        if (isUnlocked)
+        // Check if the door is unlocked
+        if (!isUnlocked)
         {
-            open = !open;
-            asource.clip = open ? openDoor : closeDoor;
-            asource.Play();
-            if (requiresSpawnBackground && spawnBackground != null)
-            {
-                spawnBackground.SetActive(true);
-            }
+            Debug.LogWarning("Door is locked and cannot be opened.");
+            return;
         }
+
+        // Check if the cooldown period has elapsed
+        if (Time.time - lastInteractionTime < cooldownTime)
+        {
+            Debug.LogWarning("Door is on cooldown. Please wait.");
+            return;
+        }
+
+        // Toggle the door's open state
+        open = !open;
+
+        // Play the appropriate sound
+        asource.clip = open ? openDoor : closeDoor;
+        asource.Play();
+
+        // Activate the spawn background if required
+        if (requiresSpawnBackground && spawnBackground != null && open)
+        {
+            spawnBackground.SetActive(true);
+        }
+
+        // Update the last interaction time
+        lastInteractionTime = Time.time;
     }
 
     public void UnlockDoor()
     {
         isUnlocked = true;
+        Debug.Log("Door unlocked.");
     }
 }
