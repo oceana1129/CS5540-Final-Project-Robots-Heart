@@ -3,17 +3,17 @@ using System.Collections.Generic;
 
 public class LevelManager : MonoBehaviour
 {
-    // tracks the number of objectives to be completed to unlock the door
-    // requiredPadsToRead should be set to the number of pads in the scene
     public bool isMiloObjective = false;
     public bool isReadingLogsObjective = false;
     public int requiredPadsToRead = 0;
+    public string requiredFlagID; // The flag required to unlock the door
+
     private bool isMiloActivated = false;
     private bool isReadingLogsCompleted = false;
     private int padsRead;
     private HashSet<Transform> readPads;
+    private bool doorUnlocked = false; // Track if the door has already been unlocked
 
-    // if requiredPadsToRead is 0, the door will be unlocked immediately 
     void Start()
     {
         if (isReadingLogsObjective)
@@ -23,13 +23,25 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    
+
     private void Update()
     {
+        // Check if the required flag is set
+        if (!doorUnlocked && !string.IsNullOrEmpty(requiredFlagID) && FlagManager.Instance.HasFlag(requiredFlagID))
+        {
+            EnableDoor();
+            doorUnlocked = true; // Mark the door as unlocked
+            return; // Exit to prevent further checks
+        }
+
+        // Existing logic for objectives
         if (isReadingLogsObjective && isMiloObjective)
         {
             if (isMiloActivated && isReadingLogsCompleted)
             {
                 EnableDoor();
+                doorUnlocked = true; // Mark the door as unlocked
             }
         }
 
@@ -38,6 +50,7 @@ public class LevelManager : MonoBehaviour
             if (isMiloActivated)
             {
                 EnableDoor();
+                doorUnlocked = true; // Mark the door as unlocked
             }
         }
         else if (isReadingLogsObjective && !isMiloObjective)
@@ -45,11 +58,12 @@ public class LevelManager : MonoBehaviour
             if (isReadingLogsCompleted)
             {
                 EnableDoor();
+                doorUnlocked = true; // Mark the door as unlocked
             }
         }
     }
 
-    // the method to call when a pad is read and open the door if all pads are read
+
     public void PadRead(Transform pad)
     {
         if (pad == null || readPads == null || isReadingLogsObjective == false)
@@ -69,7 +83,6 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    // finds the door in the scene and unlocks it
     private void EnableDoor()
     {
         GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
@@ -98,4 +111,3 @@ public class LevelManager : MonoBehaviour
         isMiloActivated = true;
     }
 }
-
