@@ -7905,11 +7905,11 @@ MonoBehaviour:
   monitorFlagsContinuously: 0
   requiredItemID: 
   requiresAnotherItem: 0
-  disableIfFlagged: 1
+  disableIfFlagged: 0
   disableOnLoadIfFlagged: 0
   disableIfRequiredIdFound: 0
-  requiresTriggerEnter: 1
-  requiresInteract: 0
+  requiresTriggerEnter: 0
+  requiresInteract: 1
 --- !u!65 &1836221707
 BoxCollider:
   m_ObjectHideFlags: 0
