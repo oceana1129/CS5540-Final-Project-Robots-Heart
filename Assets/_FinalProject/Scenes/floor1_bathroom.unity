@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b13be60853ce44880f4283c00452f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: floor1_Miloroom
+  nextSceneName: floor1_observationRoom
 --- !u!4 &364014174 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4087792964039726083, guid: d976e8df1de230e41b10085f4b305156,
