@@ -1763,19 +1763,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227401947}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e74c55421605cd8439e9729aa259b13c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   puzzleElements:
   - target: {fileID: 1195342552}
+    targetName: 
     requiredFlag: storage_battery
     enableIfFlagPresent: 0
     disableIfFlagPresent: 1
     oneTimeCheck: 0
     hasAppliedEffect: 0
   - target: {fileID: 1195342552}
+    targetName: 
     requiredFlag: storage_battery
     enableIfFlagPresent: 0
     disableIfFlagPresent: 1
@@ -8997,6 +8999,119 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0948e26c0bdc50f4d82f9162c0e5d466, type: 3}
+--- !u!1001 &1602876143
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[0].target
+      value: 
+      objectReference: {fileID: 1195342552}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[1].target
+      value: 
+      objectReference: {fileID: 1195342552}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[0].targetName
+      value: battery
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[1].targetName
+      value: battery
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[0].requiredFlag
+      value: storage_battery
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[1].requiredFlag
+      value: storage_battery
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[1].enableIfFlagPresent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[0].disableIfFlagPresent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430086176038139391, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.156224
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430086176038139391, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.05044952
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430086176038139391, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.237959
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430086176038139391, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430086176038139391, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430086176038139391, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430086176038139391, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430086176038139391, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430086176038139391, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430086176038139391, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217636259840428501, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: m_Name
+      value: PuzzleManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 906abbf480cb8ad40900e5cd5c99bf26, type: 3}
 --- !u!1001 &1625909225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12611,3 +12726,4 @@ SceneRoots:
   - {fileID: 282079797}
   - {fileID: 1865463806}
   - {fileID: 1597012182}
+  - {fileID: 1602876143}

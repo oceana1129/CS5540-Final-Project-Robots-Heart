@@ -24,11 +24,18 @@ public class MainMenuBehavior : MonoBehaviour
             return;
         }
     }
-    public void StartGame()
+    public void StartControls()
     {
         // SceneManager.LoadScene(0);
         Debug.Log("starting the main game");
         sceneManagement.LoadSceneByIndex(1);
+    }
+
+    public void StartGame()
+    {
+        // SceneManager.LoadScene(0);
+        Debug.Log("starting the main game");
+        sceneManagement.LoadSceneByIndex(2);
     }
 
     public void ViewSettings()

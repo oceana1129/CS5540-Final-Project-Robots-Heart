@@ -17224,7 +17224,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865463807}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e74c55421605cd8439e9729aa259b13c, type: 3}
   m_Name: 
@@ -19378,6 +19378,159 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2142463526}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2236386271307260970
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[0].target
+      value: 
+      objectReference: {fileID: 710999886}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[1].target
+      value: 
+      objectReference: {fileID: 153551984}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[2].target
+      value: 
+      objectReference: {fileID: 878376805}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[3].target
+      value: 
+      objectReference: {fileID: 282732411}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[0].targetName
+      value: ComputerLockedDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[1].targetName
+      value: ComputerUnlockDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[2].targetName
+      value: LockboxLocked
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[3].targetName
+      value: LockboxUnlocked
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[0].requiredFlag
+      value: observation_sticky_note
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[1].requiredFlag
+      value: observation_sticky_note
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[2].requiredFlag
+      value: storage_lockbox_key
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[3].requiredFlag
+      value: storage_lockbox_key
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[1].enableIfFlagPresent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[3].enableIfFlagPresent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[0].disableIfFlagPresent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: puzzleElements.Array.data[2].disableIfFlagPresent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430086176038139391, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.156224
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430086176038139391, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.05044952
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430086176038139391, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.237959
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430086176038139391, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430086176038139391, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430086176038139391, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430086176038139391, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430086176038139391, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430086176038139391, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430086176038139391, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217636259840428501, guid: 906abbf480cb8ad40900e5cd5c99bf26,
+        type: 3}
+      propertyPath: m_Name
+      value: PuzzleManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 906abbf480cb8ad40900e5cd5c99bf26, type: 3}
 --- !u!1001 &6875398577844461464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19605,5 +19758,6 @@ SceneRoots:
   - {fileID: 878376812}
   - {fileID: 282732418}
   - {fileID: 1865463806}
+  - {fileID: 2236386271307260970}
   - {fileID: 927568480}
   - {fileID: 851940250}
