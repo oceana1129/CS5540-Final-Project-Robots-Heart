@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b13be60853ce44880f4283c00452f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: floor1_Miloroom
+  nextSceneName: floor1_observationRoom
 --- !u!4 &364014174 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4087792964039726083, guid: d976e8df1de230e41b10085f4b305156,
@@ -2540,11 +2540,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flagID: bathroom_mirror_dialogue
+  monitorFlagsContinuously: 0
   requiredItemID: 
+  requiresAnotherItem: 0
   disableIfFlagged: 0
+  disableOnLoadIfFlagged: 0
+  disableIfRequiredIdFound: 0
   requiresTriggerEnter: 1
   requiresInteract: 0
-  requiresAnotherItem: 0
 --- !u!65 &921452323
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4170,11 +4173,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flagID: bathroom_went_in_stall
+  monitorFlagsContinuously: 0
   requiredItemID: 
+  requiresAnotherItem: 0
   disableIfFlagged: 0
+  disableOnLoadIfFlagged: 0
+  disableIfRequiredIdFound: 0
   requiresTriggerEnter: 1
   requiresInteract: 0
-  requiresAnotherItem: 0
 --- !u!65 &1662217976
 BoxCollider:
   m_ObjectHideFlags: 0
