@@ -79,6 +79,7 @@ public class DialogueManager : MonoBehaviour
     private bool isPlayerInRadius = false; // is player in the dialogue
     private bool dialogueChainIsActive = false;  // register if dialogue is active
     private bool isTypingLine = false;
+    private bool skipTypingRequested = false;
 
     [Header("Dialogue Timer")]
     private Coroutine dialogueCoroutine;
@@ -143,7 +144,6 @@ public class DialogueManager : MonoBehaviour
         // isInteractPressed = context.ReadValueAsButton();
         if (context.phase == InputActionPhase.Performed)
         {
-            Debug.Log("interact pressed during dialogue");
             isInteractPressed = true;
         }
     }
@@ -156,6 +156,11 @@ public class DialogueManager : MonoBehaviour
             Debug.Log("isInteractPressed: " + isInteractPressed);
             TriggerDialogueChain();
             isInteractPressed = false; // prevent retriggering
+        }
+
+        if (isTypingLine && Input.GetKeyDown(KeyCode.E))
+        {
+            skipTypingRequested = true;
         }
 
         if (dialogueChainIsActive && isInteractPressed && !isTypingLine)
@@ -260,6 +265,13 @@ public class DialogueManager : MonoBehaviour
 
         foreach (char letter in formattedText.ToCharArray())
         {
+            if (skipTypingRequested)
+            {
+                dialogueText.text = formattedText;
+                dialogueText.transform.position = originalPositions[0];
+                skipTypingRequested = false;
+                break;
+            }
             int letterIndex = dialogueText.text.Length; // get current letter index
 
             // if angry, add shake

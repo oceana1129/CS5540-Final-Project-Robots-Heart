@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class MainMenuBehavior : MonoBehaviour
 {
-    public GameObject mainMenuPanel;
+
+    public GameObject menuContainer;
+    public GameObject creditsContainer;
+    public GameObject settingsContainer;
     private SceneManagement sceneManagement;
 
     private void Awake()
@@ -15,7 +18,7 @@ public class MainMenuBehavior : MonoBehaviour
             return;
         }
 
-        if (!mainMenuPanel)
+        if (!menuContainer)
         {
             Debug.LogWarning("please add main menu panel via the inspector.");
             return;
@@ -39,5 +42,13 @@ public class MainMenuBehavior : MonoBehaviour
     public void ViewCredits()
     {
         Debug.Log("made by Oceana and Zuoyin");
+        menuContainer.SetActive(false);
+        creditsContainer.SetActive(true);
+    }
+
+    public void ViewPauseMenu() {
+        Debug.Log("looking at the pause menu");
+        menuContainer.SetActive(true);
+        creditsContainer.SetActive(false);
     }
 }

@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public static bool IsAlive{get; private set;}
     public int maxHealth = 100;
     private int CurrentHealth {get; set;} = 100;
+    private const string PlayerHealthFlagKey = "player_health";
 
     [Header("UI Settings")]
 
@@ -29,7 +30,17 @@ public class PlayerHealth : MonoBehaviour
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         
-        CurrentHealth = maxHealth;
+
+        if (PlayerPrefs.HasKey(PlayerHealthFlagKey))
+        {
+            CurrentHealth = PlayerPrefs.GetInt(PlayerHealthFlagKey);
+            Debug.Log("Loaded saved health: " + CurrentHealth);
+        }
+        else
+        {
+            CurrentHealth = maxHealth;
+        }
+
         IsAlive = true;
         UpdateHealthSlider();
     }
@@ -59,6 +70,8 @@ public class PlayerHealth : MonoBehaviour
         HandleAnimation();
         UpdateHealthSlider();
 
+        UpdatePublicHealth();
+
         Debug.Log("current health " + CurrentHealth);
     }
 
@@ -85,6 +98,8 @@ public class PlayerHealth : MonoBehaviour
 
         Debug.Log("current health " + CurrentHealth);
 
+        UpdatePublicHealth();
+
         if (CurrentHealth <= 0 && IsAlive)
         {
             PlayerDies();
@@ -96,6 +111,11 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("Player dies!");
         IsAlive = false;
+    }
+
+    void UpdatePublicHealth() {
+        PlayerPrefs.SetInt(PlayerHealthFlagKey, CurrentHealth);
+        PlayerPrefs.Save();
     }
 
     void PlaySoundEffect(AudioClip sfx) 
