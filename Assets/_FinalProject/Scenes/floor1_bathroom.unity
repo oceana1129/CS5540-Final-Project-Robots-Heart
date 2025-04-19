@@ -2260,7 +2260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &741356272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5404,6 +5404,7 @@ MonoBehaviour:
   isMiloObjective: 0
   isReadingLogsObjective: 0
   requiredPadsToRead: 0
+  requiredFlagID: 
 --- !u!4 &1768340123
 Transform:
   m_ObjectHideFlags: 0

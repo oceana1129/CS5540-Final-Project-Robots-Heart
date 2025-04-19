@@ -1879,6 +1879,7 @@ MonoBehaviour:
   smooth: 1
   openDoor: {fileID: 8300000, guid: 33271de20f9ff44cc9e6fa1cb2005d6f, type: 3}
   closeDoor: {fileID: 8300000, guid: 33271de20f9ff44cc9e6fa1cb2005d6f, type: 3}
+  cooldownTime: 2
   requiresSpawnBackground: 1
   spawnBackground: {fileID: 403452509}
   slideDistance: 3
@@ -3619,7 +3620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &741356272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6458,6 +6459,7 @@ MonoBehaviour:
   smooth: 1
   openDoor: {fileID: 8300000, guid: 33271de20f9ff44cc9e6fa1cb2005d6f, type: 3}
   closeDoor: {fileID: 8300000, guid: 33271de20f9ff44cc9e6fa1cb2005d6f, type: 3}
+  cooldownTime: 2
   requiresSpawnBackground: 1
   spawnBackground: {fileID: 1151221410}
   slideDistance: 3
@@ -8314,6 +8316,7 @@ MonoBehaviour:
   isMiloObjective: 0
   isReadingLogsObjective: 0
   requiredPadsToRead: 0
+  requiredFlagID: 
 --- !u!4 &1768340123
 Transform:
   m_ObjectHideFlags: 0
@@ -9848,6 +9851,7 @@ MonoBehaviour:
   smooth: 1
   openDoor: {fileID: 8300000, guid: 33271de20f9ff44cc9e6fa1cb2005d6f, type: 3}
   closeDoor: {fileID: 8300000, guid: 33271de20f9ff44cc9e6fa1cb2005d6f, type: 3}
+  cooldownTime: 2
   requiresSpawnBackground: 1
   spawnBackground: {fileID: 1986494015}
   slideDistance: 3

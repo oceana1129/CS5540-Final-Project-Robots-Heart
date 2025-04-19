@@ -4957,6 +4957,7 @@ MonoBehaviour:
   smooth: 1
   openDoor: {fileID: 8300000, guid: 33271de20f9ff44cc9e6fa1cb2005d6f, type: 3}
   closeDoor: {fileID: 8300000, guid: 33271de20f9ff44cc9e6fa1cb2005d6f, type: 3}
+  cooldownTime: 2
   requiresSpawnBackground: 1
   spawnBackground: {fileID: 747276975}
   slideDistance: 3
@@ -7331,7 +7332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &909528040
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13388,6 +13389,7 @@ MonoBehaviour:
   smooth: 1
   openDoor: {fileID: 8300000, guid: 33271de20f9ff44cc9e6fa1cb2005d6f, type: 3}
   closeDoor: {fileID: 8300000, guid: 33271de20f9ff44cc9e6fa1cb2005d6f, type: 3}
+  cooldownTime: 2
   requiresSpawnBackground: 0
   spawnBackground: {fileID: 0}
   slideDistance: 0
