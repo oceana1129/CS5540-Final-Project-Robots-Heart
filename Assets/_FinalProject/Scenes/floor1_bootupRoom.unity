@@ -670,6 +670,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4971675843122202815, guid: 197bb6ba10e461e4db401bc493408e1e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8028947568676085615, guid: 197bb6ba10e461e4db401bc493408e1e,
         type: 3}
       propertyPath: m_Pivot.x
@@ -6009,6 +6014,51 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.3945944, y: 1.2624998, z: 0.8742567}
   m_Center: {x: -0.043156732, y: 0.1312522, z: 0.06287169}
+--- !u!1 &1404699003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1404699005}
+  - component: {fileID: 1404699004}
+  m_Layer: 0
+  m_Name: AudioChangeDefault
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1404699004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404699003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b594d665c567a664dbdd19b7b58ea2c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneClip: {fileID: 8300000, guid: aa736804a8e850048812d514104e3932, type: 3}
+--- !u!4 &1404699005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404699003}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 557.5786, y: 283.28302, z: 286.06674}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1480744606
 GameObject:
   m_ObjectHideFlags: 0
@@ -7429,6 +7479,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948940701358290354, guid: dc7c976697d5c91469c7eb65a6b30ccb,
+        type: 3}
+      propertyPath: bgmClip
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8664615299617299757, guid: dc7c976697d5c91469c7eb65a6b30ccb, type: 3}
@@ -9120,3 +9175,4 @@ SceneRoots:
   - {fileID: 1865463806}
   - {fileID: 1969111049}
   - {fileID: 1903042036}
+  - {fileID: 1404699005}
