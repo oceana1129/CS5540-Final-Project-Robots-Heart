@@ -79,6 +79,7 @@ public class FlagManager : MonoBehaviour
     {
         Debug.LogWarning("REMOVING ALL FLAGS. Disable debug mode to ensure flags stay across scenes!");
         flags.Clear();
+        PlayerPrefs.SetInt("player_health", 100);
         SaveFlags();
     }
 
