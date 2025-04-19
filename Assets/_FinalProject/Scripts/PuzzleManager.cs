@@ -11,6 +11,7 @@ public class PuzzleManager : MonoBehaviour
     public class PuzzleElement
     {
         public GameObject target;
+         public string targetName;
         public string requiredFlag;
         public bool enableIfFlagPresent = true; // enable the object if the flag is present
         public bool disableIfFlagPresent = false; // sisable the object if the flag is present
@@ -27,9 +28,19 @@ public class PuzzleManager : MonoBehaviour
         // Run checks once for any one-time flags
         foreach (var element in puzzleElements)
         {
-            if (element.oneTimeCheck)
+            
+            if (element.target == null && !string.IsNullOrEmpty(element.targetName))
             {
-                CheckFlagAndApply(element);
+                GameObject found = GameObject.Find(element.targetName);
+                if (found != null)
+                {
+                    element.target = found;
+                    Debug.Log($"Auto-assigned puzzle target: {element.targetName}");
+                }
+                else
+                {
+                    Debug.LogWarning($"Could not find puzzle element with name: {element.targetName}");
+                }
             }
         }
     }
@@ -52,12 +63,23 @@ public class PuzzleManager : MonoBehaviour
 
         bool flagSet = FlagManager.Instance.HasFlag(element.requiredFlag);
 
+        if (element.enableIfFlagPresent && !flagSet)
+        {
+            if (element.target.activeSelf)
+            {
+                element.target.SetActive(false);
+                Debug.Log($"[PuzzleManager] Disabled {element.target.name} because flag '{element.requiredFlag}' is missing");
+            }
+            if (element.oneTimeCheck) element.hasAppliedEffect = true;
+        }
+
         if (element.enableIfFlagPresent && flagSet && !element.target.activeSelf)
         {
             element.target.SetActive(true);
             if (element.oneTimeCheck) element.hasAppliedEffect = true;
             Debug.Log($"Enabled {element.target.name} due to flag '{element.requiredFlag}'");
         }
+
 
         if (element.disableIfFlagPresent && flagSet && element.target.activeSelf)
         {
