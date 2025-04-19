@@ -2782,7 +2782,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &741356272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3494,7 +3494,6 @@ GameObject:
   - component: {fileID: 855623676}
   - component: {fileID: 855623675}
   - component: {fileID: 855623674}
-  - component: {fileID: 855623677}
   m_Layer: 0
   m_Name: Electric Door
   m_TagString: Door
@@ -3533,11 +3532,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorType: 1
   open: 0
-  isUnlocked: 0
+  isUnlocked: 1
   smooth: 1
   openDoor: {fileID: 8300000, guid: 33271de20f9ff44cc9e6fa1cb2005d6f, type: 3}
   closeDoor: {fileID: 8300000, guid: 33271de20f9ff44cc9e6fa1cb2005d6f, type: 3}
-  cooldownTime: 2
   requiresSpawnBackground: 1
   spawnBackground: {fileID: 486080694}
   slideDistance: 3
@@ -3660,36 +3658,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.8, y: 3.72, z: 6.63}
+  m_Size: {x: 2.56, y: 3.72, z: 6.63}
   m_Center: {x: 18.84, y: 1.85, z: -8.8}
---- !u!114 &855623677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 855623672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7076969c9b2387446b9de1fa2e194cf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  restartAtDialogueIndex: 0
-  canTriggerDialogueChain: 1
-  TriggerDialogueChainByEnteringArea: 0
-  TriggerDialogueChainByInteraction: 1
-  TriggerDialogueChainOnlyOnce: 0
-  dialogueUIPrefab: {fileID: 1180496288310452866, guid: 01faa2bda7953084fac1f48cea33c4af,
-    type: 3}
-  animationDuration: 0.2
-  dialogues:
-  - characterName: 
-    hasBranch: 0
-    lines:
-    - isSpokenOutloud: 0
-      emotion: 0
-      scrollSpeed: 2
-      text: This door leads to the Diagnostic Bay.
 --- !u!1 &860969403
 GameObject:
   m_ObjectHideFlags: 0
@@ -5792,7 +5762,6 @@ Transform:
   m_Children:
   - {fileID: 751598274}
   - {fileID: 1227007742}
-  - {fileID: 1654864608}
   - {fileID: 1570984983}
   - {fileID: 216784232}
   - {fileID: 712638039}
@@ -6079,95 +6048,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1599892239}
   m_Mesh: {fileID: 4300004, guid: 4eed81b28124d4dc6bab1180d5aa173c, type: 3}
---- !u!1001 &1654864607
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1389321793}
-    m_Modifications:
-    - target: {fileID: 1492822367351840447, guid: 876c1c47e01a4c44083011541ebf8736,
-        type: 3}
-      propertyPath: m_Name
-      value: wall_invisible (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5061856045927634280, guid: 876c1c47e01a4c44083011541ebf8736,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5061856045927634280, guid: 876c1c47e01a4c44083011541ebf8736,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 5061856045927634280, guid: 876c1c47e01a4c44083011541ebf8736,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 5061856045927634280, guid: 876c1c47e01a4c44083011541ebf8736,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5061856045927634280, guid: 876c1c47e01a4c44083011541ebf8736,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 10.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 5061856045927634280, guid: 876c1c47e01a4c44083011541ebf8736,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5061856045927634280, guid: 876c1c47e01a4c44083011541ebf8736,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5061856045927634280, guid: 876c1c47e01a4c44083011541ebf8736,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5061856045927634280, guid: 876c1c47e01a4c44083011541ebf8736,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5061856045927634280, guid: 876c1c47e01a4c44083011541ebf8736,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5061856045927634280, guid: 876c1c47e01a4c44083011541ebf8736,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5061856045927634280, guid: 876c1c47e01a4c44083011541ebf8736,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5061856045927634280, guid: 876c1c47e01a4c44083011541ebf8736,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 876c1c47e01a4c44083011541ebf8736, type: 3}
---- !u!4 &1654864608 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5061856045927634280, guid: 876c1c47e01a4c44083011541ebf8736,
-    type: 3}
-  m_PrefabInstance: {fileID: 1654864607}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1666712910
 GameObject:
   m_ObjectHideFlags: 0
@@ -6592,6 +6472,53 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767037240}
   m_Mesh: {fileID: 4300000, guid: 4eed81b28124d4dc6bab1180d5aa173c, type: 3}
+--- !u!1 &1768340121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1768340123}
+  - component: {fileID: 1768340122}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1768340122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768340121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63a3c18bc7ed6d047b167bbe36559823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMiloObjective: 0
+  isReadingLogsObjective: 0
+  requiredPadsToRead: 0
+--- !u!4 &1768340123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768340121}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.0172024, y: 1.7918599, z: 6.6159644}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1774166298
 GameObject:
   m_ObjectHideFlags: 0
@@ -7159,17 +7086,12 @@ PrefabInstance:
     - target: {fileID: 2430813026500414162, guid: dc7c976697d5c91469c7eb65a6b30ccb,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2430813026500414162, guid: dc7c976697d5c91469c7eb65a6b30ccb,
-        type: 3}
-      propertyPath: requiredFlagID
-      value: bootup_keypad_code_complete
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2463135390296418658, guid: dc7c976697d5c91469c7eb65a6b30ccb,
         type: 3}
       propertyPath: DebugRemoveFlagsFromScene
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2553411615536868364, guid: dc7c976697d5c91469c7eb65a6b30ccb,
         type: 3}
@@ -7818,7 +7740,7 @@ MonoBehaviour:
   instructionTextUI: {fileID: 470312996}
   infoTextUI: {fileID: 0}
   lockedDoorMessageUI: {fileID: 383121237}
-  levelManager: {fileID: 0}
+  levelManager: {fileID: 1768340122}
 --- !u!1 &2055180529
 GameObject:
   m_ObjectHideFlags: 0
@@ -8638,6 +8560,7 @@ SceneRoots:
   - {fileID: 901576213}
   - {fileID: 155126117}
   - {fileID: 6892232}
+  - {fileID: 1768340123}
   - {fileID: 741356275}
   - {fileID: 921452326}
   - {fileID: 275858053}
