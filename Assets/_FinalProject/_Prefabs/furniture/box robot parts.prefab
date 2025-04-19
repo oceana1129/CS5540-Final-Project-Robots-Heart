@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3412992388948369648}
   - component: {fileID: 5737500432874029690}
   - component: {fileID: 329192225391657047}
+  - component: {fileID: 4843096263822804983}
   m_Layer: 0
   m_Name: box robot parts
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2867554651653921349}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.1744268, y: 0.0000014305115, z: -4.576874}
   m_LocalScale: {x: 2.13, y: 2.13, z: 2.13}
   m_ConstrainProportionsScale: 1
@@ -86,3 +87,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4843096263822804983
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2867554651653921349}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8005239, y: 0.6736151, z: 1.1675241}
+  m_Center: {x: -0.000000014901163, y: 0.33680755, z: 0.00000029802322}

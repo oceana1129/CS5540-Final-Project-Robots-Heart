@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4269817261720929799}
   - component: {fileID: 5806576419418934953}
   - component: {fileID: 1788161634823928747}
+  - component: {fileID: 8591670259991339280}
   m_Layer: 0
   m_Name: box supplies
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311324704410303381}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.20924711, y: 0.40219545, z: -3.3944416}
   m_LocalScale: {x: 2.13, y: 2.13, z: 2.13}
   m_ConstrainProportionsScale: 1
@@ -86,3 +87,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8591670259991339280
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311324704410303381}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.80052364, y: 0.77542657, z: 0.72515005}
+  m_Center: {x: 0.0049219127, y: 0.38771328, z: 0}

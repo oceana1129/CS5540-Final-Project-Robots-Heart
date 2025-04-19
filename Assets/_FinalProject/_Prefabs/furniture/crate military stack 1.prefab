@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 2759917664149388464}
   - component: {fileID: 3168193225592420282}
   - component: {fileID: 2354598520533453048}
+  - component: {fileID: 644120142160018868}
   m_Layer: 0
   m_Name: crate military stack 1
   m_TagString: Untagged
@@ -112,7 +113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712092423560541092}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.14, y: 0.0000019073486, z: -1.1517668}
   m_LocalScale: {x: 1.78, y: 1.78, z: 1.78}
   m_ConstrainProportionsScale: 1
@@ -173,3 +174,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &644120142160018868
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712092423560541092}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0800115, y: 0.250204, z: 0.6976033}
+  m_Center: {x: -0.0000009834768, y: 0.125102, z: -0.0055568223}
