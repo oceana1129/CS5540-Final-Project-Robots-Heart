@@ -4343,6 +4343,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2638454845567109770, guid: 556366029a6f24c4396a334c45bcdb27,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2638454845567109770, guid: 556366029a6f24c4396a334c45bcdb27,
+        type: 3}
       propertyPath: TriggerDialogueChainOnlyOnce
       value: 1
       objectReference: {fileID: 0}
