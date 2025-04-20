@@ -146,6 +146,8 @@ public class PauseMenuBehavior : MonoBehaviour
         // this is not used for webgl but works on other things
         // Application.Quit();
         Debug.Log("reloading the game");
+        
+        FlagManager.Instance.RemoveAllFlags();
         sceneManagement.LoadSceneByIndex(0);
     }
 
