@@ -4432,7 +4432,7 @@ MonoBehaviour:
   canTriggerDialogueChain: 1
   TriggerDialogueChainByEnteringArea: 0
   TriggerDialogueChainByInteraction: 1
-  TriggerDialogueChainOnlyOnce: 1
+  TriggerDialogueChainOnlyOnce: 0
   dialogueUIPrefab: {fileID: 1180496288310452866, guid: 01faa2bda7953084fac1f48cea33c4af,
     type: 3}
   animationDuration: 0.2
@@ -8607,12 +8607,12 @@ PrefabInstance:
     - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
         type: 3}
       propertyPath: puzzleElements.Array.data[2].requiredFlag
-      value: bootup_keypad_code
+      value: bootup_keypad_code_complete
       objectReference: {fileID: 0}
     - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
         type: 3}
       propertyPath: puzzleElements.Array.data[3].requiredFlag
-      value: bootup_keypad_code
+      value: bootup_keypad_code_complete
       objectReference: {fileID: 0}
     - target: {fileID: 6963007051567127013, guid: 906abbf480cb8ad40900e5cd5c99bf26,
         type: 3}
