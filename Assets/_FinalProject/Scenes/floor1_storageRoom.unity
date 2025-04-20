@@ -2267,7 +2267,7 @@ GameObject:
   - component: {fileID: 282079791}
   m_Layer: 0
   m_Name: BoxesDialogue
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5416,7 +5416,7 @@ GameObject:
   - component: {fileID: 921452329}
   m_Layer: 0
   m_Name: EmptyRobotDialogue
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9347,7 +9347,7 @@ GameObject:
   - component: {fileID: 1632536142}
   m_Layer: 0
   m_Name: BatteryUngrabbedDialogue
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11915,7 +11915,7 @@ GameObject:
   - component: {fileID: 2088677112}
   m_Layer: 0
   m_Name: KeyUngrabbedDialogue
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

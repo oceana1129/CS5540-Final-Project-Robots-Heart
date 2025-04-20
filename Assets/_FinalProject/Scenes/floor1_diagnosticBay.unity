@@ -3692,7 +3692,7 @@ GameObject:
   - component: {fileID: 691063603}
   m_Layer: 0
   m_Name: HealPadDialogue
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4642,7 +4642,7 @@ GameObject:
   - component: {fileID: 825032294}
   m_Layer: 0
   m_Name: HowToMoveDialogue
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7820,7 +7820,7 @@ GameObject:
   - component: {fileID: 1482204510}
   m_Layer: 0
   m_Name: BlockedDoorDialogue
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9433,7 +9433,7 @@ GameObject:
   - component: {fileID: 1836221711}
   m_Layer: 0
   m_Name: EquipmentDialogue
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
