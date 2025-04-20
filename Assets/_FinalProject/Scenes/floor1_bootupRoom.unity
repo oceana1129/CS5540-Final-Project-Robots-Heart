@@ -732,7 +732,7 @@ GameObject:
   - component: {fileID: 89268060}
   m_Layer: 0
   m_Name: KeypadDialogueIncomplete
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1742,7 +1742,7 @@ GameObject:
   - component: {fileID: 275858047}
   m_Layer: 0
   m_Name: ShelvesDialogue
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1917,7 +1917,7 @@ GameObject:
   - component: {fileID: 306016871}
   m_Layer: 0
   m_Name: KeypadDialogueComplete
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2080,7 +2080,7 @@ Transform:
   m_GameObject: {fileID: 306016870}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.67, y: 2.447, z: 6.22}
+  m_LocalPosition: {x: 1.3, y: 2.447, z: 6.22}
   m_LocalScale: {x: 7.01, y: 3.16, z: 1.66}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5223,7 +5223,7 @@ GameObject:
   - component: {fileID: 1049183349}
   m_Layer: 0
   m_Name: JournalDialogue
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5446,7 +5446,7 @@ GameObject:
   - component: {fileID: 1076143556}
   m_Layer: 0
   m_Name: MiloDialogue
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6828,7 +6828,7 @@ GameObject:
   - component: {fileID: 1480744607}
   m_Layer: 0
   m_Name: TVDialogue
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7971,7 +7971,7 @@ GameObject:
   - component: {fileID: 1818225268}
   m_Layer: 0
   m_Name: KeycodeDialogue
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
