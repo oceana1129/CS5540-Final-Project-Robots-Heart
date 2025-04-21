@@ -174,6 +174,9 @@ public class PauseMenuBehavior : MonoBehaviour
 
     public void ViewWinMenu() {
         Debug.Log("looking at the win menu");
+        isGamePaused = true;
+        Time.timeScale = 0f;
+        pauseMenuPanel.SetActive(true);
         pauseContainer.SetActive(false);
         creditsContainer.SetActive(false);
         winContainer.SetActive(true);
