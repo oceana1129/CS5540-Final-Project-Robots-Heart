@@ -40,10 +40,9 @@ public class MainMenuBehavior : MonoBehaviour
 
     public void ViewSettings()
     {
-        // SceneManager.LoadScene(0);
         Debug.Log("open the settings menu");
-        // this is not used for webgl but works on other things
-        // Application.Quit();
+        menuContainer.SetActive(false);
+        settingsContainer.SetActive(true);
     }
 
     public void ViewCredits()
@@ -57,5 +56,6 @@ public class MainMenuBehavior : MonoBehaviour
         Debug.Log("looking at the pause menu");
         menuContainer.SetActive(true);
         creditsContainer.SetActive(false);
+        settingsContainer.SetActive(false);
     }
 }
