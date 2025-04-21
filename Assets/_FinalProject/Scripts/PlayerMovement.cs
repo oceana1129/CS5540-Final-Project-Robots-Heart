@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = 9.81f;
     public float rotationFactorPerFrame = 15.0f;
     public static bool IsAiming {get; set;} = false;
-    public static bool CanRotate {get; set;} = false;
+    public static bool CanRotate {get; set;} = true;
 
     [Header("SFX Settings")]
     public AudioClip jump1;
