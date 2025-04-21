@@ -61,14 +61,14 @@ public class AudioManager : MonoBehaviour
     {
         if (!audioSource.isPlaying && tracks != null && tracks.Length > 0)
         {
-            PlayNextTrackInRange(0, 3);
+            PlayNextTrackInRange(0, 2);
         }
 
         // Debug functionality to manually play the next track
         if (debugPlayNextTrack)
         {
             debugPlayNextTrack = false;
-            PlayNextTrackInRange(0, 4);
+            PlayNextTrackInRange(0, 3);
         }
 
     }
