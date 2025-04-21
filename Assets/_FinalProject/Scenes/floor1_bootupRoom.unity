@@ -903,6 +903,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 432943219429346428, guid: 197bb6ba10e461e4db401bc493408e1e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 432943219429346428, guid: 197bb6ba10e461e4db401bc493408e1e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 432943219429346428, guid: 197bb6ba10e461e4db401bc493408e1e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 432943219429346428, guid: 197bb6ba10e461e4db401bc493408e1e,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 700682480155309552, guid: 197bb6ba10e461e4db401bc493408e1e,
         type: 3}
       propertyPath: settingsContainer
@@ -1047,6 +1067,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954775931900447260, guid: 197bb6ba10e461e4db401bc493408e1e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954775931900447260, guid: 197bb6ba10e461e4db401bc493408e1e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954775931900447260, guid: 197bb6ba10e461e4db401bc493408e1e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954775931900447260, guid: 197bb6ba10e461e4db401bc493408e1e,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7125109686744240039, guid: 197bb6ba10e461e4db401bc493408e1e,
         type: 3}

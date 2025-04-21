@@ -247,6 +247,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 432943219429346428, guid: 197bb6ba10e461e4db401bc493408e1e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 432943219429346428, guid: 197bb6ba10e461e4db401bc493408e1e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 432943219429346428, guid: 197bb6ba10e461e4db401bc493408e1e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 432943219429346428, guid: 197bb6ba10e461e4db401bc493408e1e,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 700682480155309552, guid: 197bb6ba10e461e4db401bc493408e1e,
         type: 3}
       propertyPath: settingsContainer
@@ -257,15 +277,45 @@ PrefabInstance:
       propertyPath: settingsBackButton
       value: 
       objectReference: {fileID: 1836578943}
+    - target: {fileID: 1556926146260434834, guid: 197bb6ba10e461e4db401bc493408e1e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2328432767374725162, guid: 197bb6ba10e461e4db401bc493408e1e,
         type: 3}
       propertyPath: m_Name
       value: Canvas (UI)
       objectReference: {fileID: 0}
+    - target: {fileID: 2359553843391562529, guid: 197bb6ba10e461e4db401bc493408e1e,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4971675843122202815, guid: 197bb6ba10e461e4db401bc493408e1e,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954775931900447260, guid: 197bb6ba10e461e4db401bc493408e1e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954775931900447260, guid: 197bb6ba10e461e4db401bc493408e1e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954775931900447260, guid: 197bb6ba10e461e4db401bc493408e1e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954775931900447260, guid: 197bb6ba10e461e4db401bc493408e1e,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8028947568676085615, guid: 197bb6ba10e461e4db401bc493408e1e,
         type: 3}
@@ -365,6 +415,11 @@ PrefabInstance:
     - target: {fileID: 8028947568676085615, guid: 197bb6ba10e461e4db401bc493408e1e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932364821987921350, guid: 197bb6ba10e461e4db401bc493408e1e,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
