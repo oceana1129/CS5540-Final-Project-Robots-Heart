@@ -795,8 +795,31 @@ PrefabInstance:
     - {fileID: 2430813026500414162, guid: dc7c976697d5c91469c7eb65a6b30ccb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6110147090946472919, guid: dc7c976697d5c91469c7eb65a6b30ccb,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 525435606}
   m_SourcePrefab: {fileID: 100100000, guid: dc7c976697d5c91469c7eb65a6b30ccb, type: 3}
+--- !u!1 &525435605 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6110147090946472919, guid: dc7c976697d5c91469c7eb65a6b30ccb,
+    type: 3}
+  m_PrefabInstance: {fileID: 525435604}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &525435606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525435605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a47e7cff2b961147815e92f1998ccf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previousDoorID: 
 --- !u!1 &606417759
 GameObject:
   m_ObjectHideFlags: 0

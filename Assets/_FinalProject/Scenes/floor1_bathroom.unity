@@ -4521,6 +4521,51 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2de4559ccac9e9946892f3faaa91302d, type: 3}
+--- !u!1 &1523278022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1523278024}
+  - component: {fileID: 1523278023}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1523278023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523278022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fc6dc1fd2fa624ab455432809dcfc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previousDoorID: observation_to_bathroom
+--- !u!4 &1523278024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523278022}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 5.45, y: 0.1, z: 6.13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &1527798171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4529,6 +4574,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 427096900}
     m_Modifications:
+    - target: {fileID: 579624367229429963, guid: 556366029a6f24c4396a334c45bcdb27,
+        type: 3}
+      propertyPath: currentDoorID
+      value: bathroom_to_observation
+      objectReference: {fileID: 0}
     - target: {fileID: 579624367229429963, guid: 556366029a6f24c4396a334c45bcdb27,
         type: 3}
       propertyPath: nextSceneName
@@ -6253,29 +6303,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d77a75c98992b840b27e02e065df54f, type: 3}
---- !u!1 &2031410565 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2969110529223773069, guid: 03107dbc8387c6946b2a15b39ecaa93c,
-    type: 3}
-  m_PrefabInstance: {fileID: 6875398577844461464}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2031410566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2031410565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63c3318da193d864a929053409ecea77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionRange: 2
-  instructionTextUI: {fileID: 470312996}
-  infoTextUI: {fileID: 0}
-  lockedDoorMessageUI: {fileID: 383121237}
-  levelManager: {fileID: 1768340122}
 --- !u!1 &2036079872
 GameObject:
   m_ObjectHideFlags: 0
@@ -6684,21 +6711,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 479634351828609435, guid: 03107dbc8387c6946b2a15b39ecaa93c,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 479634351828609435, guid: 03107dbc8387c6946b2a15b39ecaa93c,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 479634351828609435, guid: 03107dbc8387c6946b2a15b39ecaa93c,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 479634351828609435, guid: 03107dbc8387c6946b2a15b39ecaa93c,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.21
       objectReference: {fileID: 0}
@@ -6747,16 +6759,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 479634351828609435, guid: 03107dbc8387c6946b2a15b39ecaa93c,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 845158460561942220, guid: 03107dbc8387c6946b2a15b39ecaa93c,
-        type: 3}
-      propertyPath: speed
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2969110529223773069, guid: 03107dbc8387c6946b2a15b39ecaa93c,
         type: 3}
       propertyPath: m_Name
@@ -6767,19 +6769,30 @@ PrefabInstance:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 155126118}
+    - target: {fileID: 5550288393767636526, guid: 03107dbc8387c6946b2a15b39ecaa93c,
+        type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1768340122}
+    - target: {fileID: 5550288393767636526, guid: 03107dbc8387c6946b2a15b39ecaa93c,
+        type: 3}
+      propertyPath: instructionTextUI
+      value: 
+      objectReference: {fileID: 470312996}
+    - target: {fileID: 5550288393767636526, guid: 03107dbc8387c6946b2a15b39ecaa93c,
+        type: 3}
+      propertyPath: lockedDoorMessageUI
+      value: 
+      objectReference: {fileID: 383121237}
     - target: {fileID: 5768645745004171632, guid: 03107dbc8387c6946b2a15b39ecaa93c,
         type: 3}
-      propertyPath: mainCamera
-      value: 
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2969110529223773069, guid: 03107dbc8387c6946b2a15b39ecaa93c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2031410566}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03107dbc8387c6946b2a15b39ecaa93c, type: 3}
 --- !u!4 &6875398577844461465 stripped
 Transform:
@@ -6875,3 +6888,4 @@ SceneRoots:
   - {fileID: 551547235}
   - {fileID: 427096900}
   - {fileID: 407823029}
+  - {fileID: 1523278024}

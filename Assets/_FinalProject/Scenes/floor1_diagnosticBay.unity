@@ -1143,6 +1143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSceneName: floor1_bootupRoom
+  currentDoorID: diagnostic_to_bootup
 --- !u!1001 &205026380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2497,6 +2498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSceneName: floor1_observationRoom
+  currentDoorID: 
 --- !u!1001 &407845781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4189,6 +4191,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 579624367229429963, guid: 556366029a6f24c4396a334c45bcdb27,
         type: 3}
+      propertyPath: currentDoorID
+      value: diagnostic_to_observation
+      objectReference: {fileID: 0}
+    - target: {fileID: 579624367229429963, guid: 556366029a6f24c4396a334c45bcdb27,
+        type: 3}
       propertyPath: nextSceneName
       value: floor1_observationRoom
       objectReference: {fileID: 0}
@@ -5703,6 +5710,96 @@ Transform:
   - {fileID: 1895276010}
   m_Father: {fileID: 871080238}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1009022122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1009022124}
+  - component: {fileID: 1009022123}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1009022123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009022122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fc6dc1fd2fa624ab455432809dcfc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previousDoorID: bootup_to_diagnostic
+--- !u!4 &1009022124
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009022122}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.65, y: 0.1, z: -7.74}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1013950034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1013950036}
+  - component: {fileID: 1013950035}
+  m_Layer: 0
+  m_Name: SpawnPoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1013950035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013950034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fc6dc1fd2fa624ab455432809dcfc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previousDoorID: milo_to_diagnostic
+--- !u!4 &1013950036
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013950034}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 3.33, y: 0.1, z: 7.29}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1016935179
 GameObject:
   m_ObjectHideFlags: 0
@@ -6352,6 +6449,51 @@ MonoBehaviour:
   gizmoColor: {r: 0, g: 1, b: 0, a: 0.25}
   drawWireframe: 0
   drawFilled: 1
+--- !u!1 &1080173248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1080173250}
+  - component: {fileID: 1080173249}
+  m_Layer: 0
+  m_Name: SpawnPoint (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1080173249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080173248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fc6dc1fd2fa624ab455432809dcfc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previousDoorID: observation_to_diagnostic
+--- !u!4 &1080173250
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080173248}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -5.14, y: 0.1, z: -0.47}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1112417742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6548,6 +6690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSceneName: floor1_MiloRoom
+  currentDoorID: diagnostic_to_na
 --- !u!1001 &1166866673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10915,6 +11058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSceneName: floor1_MiloRoom
+  currentDoorID: 
 --- !u!1001 &1997940766
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10923,6 +11067,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 579624367229429963, guid: 556366029a6f24c4396a334c45bcdb27,
+        type: 3}
+      propertyPath: currentDoorID
+      value: diagnostic_to_milo
+      objectReference: {fileID: 0}
     - target: {fileID: 579624367229429963, guid: 556366029a6f24c4396a334c45bcdb27,
         type: 3}
       propertyPath: nextSceneName
@@ -11579,6 +11728,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5768645745004171632, guid: 03107dbc8387c6946b2a15b39ecaa93c,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5768645745004171632, guid: 03107dbc8387c6946b2a15b39ecaa93c,
+        type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 0}
@@ -11705,3 +11859,6 @@ SceneRoots:
   - {fileID: 613895588}
   - {fileID: 735657305}
   - {fileID: 1997940766}
+  - {fileID: 1009022124}
+  - {fileID: 1080173250}
+  - {fileID: 1013950036}
