@@ -53,21 +53,25 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        PlayDefaultBGM();   // Play the BGM clip at the start
+        PlayDefaultBGM();
         LoadVolume();
     }
 
     void Update()
     {
+        if (!audioSource.isPlaying && tracks != null && tracks.Length > 0)
+        {
+            PlayNextTrackInRange(0, 3);
+        }
+
+        // Debug functionality to manually play the next track
         if (debugPlayNextTrack)
         {
-            currentTrackIndex ++;
             debugPlayNextTrack = false;
-            PlayTrackByIndex(currentTrackIndex);
+            PlayNextTrackInRange(0, 4);
         }
 
     }
-
 
     // playing the audio
     public void PlayBGM()
@@ -164,6 +168,32 @@ public class AudioManager : MonoBehaviour
         ChangeTrack(newTrack.clip);
     }
 
+    public void PlayNextTrackInRange(int startIndex, int endIndex)
+    {
+        if (tracks == null || tracks.Length == 0)
+        {
+            Debug.LogWarning("Track list is empty or not assigned");
+            return;
+        }
+
+        // Ensure the range is valid
+        if (startIndex < 0 || endIndex >= tracks.Length || startIndex > endIndex)
+        {
+            Debug.LogError("Invalid track range specified");
+            return;
+        }
+
+        // Increment the current track index and loop back to the start of the range if necessary
+        currentTrackIndex++;
+        if (currentTrackIndex > endIndex)
+        {
+            currentTrackIndex = startIndex; // Loop back to the start of the range
+        }
+
+        // Play the next track
+        PlayTrackByIndex(currentTrackIndex);
+    }
+
     // save system
     public void LoadVolume()
     {
@@ -176,4 +206,5 @@ public class AudioManager : MonoBehaviour
         PlayerPrefs.SetFloat("bgmVolume", audioSource.volume);
         PlayerPrefs.Save();
     }
+
 }
