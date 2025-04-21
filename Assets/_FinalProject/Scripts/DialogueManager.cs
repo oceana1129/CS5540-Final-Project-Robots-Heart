@@ -88,6 +88,7 @@ public class DialogueManager : MonoBehaviour
     private int currentLineIndex = 0;
     private int currentDialogueIndex = 0;
 
+    public event Action OnDialogueChainComplete;
     void Awake()
     {
         SetUpPlayerInput();
@@ -347,6 +348,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         Destroy(dialogueUIInstance, animationDuration + 0.02f);
+        OnDialogueChainComplete?.Invoke();
     }
 
     /// <summary> Animate the dialogue box if it exists </summary>

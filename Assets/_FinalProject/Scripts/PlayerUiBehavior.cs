@@ -20,7 +20,7 @@ public class PlayerUiBehavior : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Interact"))
+        if (other.CompareTag("Interact") || other.CompareTag("Milo"))
         {
             if (interactUI != null) interactUI.SetActive(true);
         }
@@ -32,7 +32,7 @@ public class PlayerUiBehavior : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Interact"))
+        if (other.CompareTag("Interact") || other.CompareTag("Milo"))
         {
             if (interactUI != null) interactUI.SetActive(false);
         }

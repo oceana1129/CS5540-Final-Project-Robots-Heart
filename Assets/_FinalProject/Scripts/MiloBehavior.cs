@@ -11,19 +11,29 @@ public class MiloBehavior : MonoBehaviour
     public float rollSpeed = 4.0f;
 
     [Header("References")]
+    public DialogueManager dialogueManager;
+    public PauseMenuBehavior pauseMenuBehavior;
     public Transform playerTransform;
     public LevelManager levelManager;
+
     private bool isFollowing = false;
+    private bool hasTriggeredWinMenu = false;
     private Animator anim;
     private CharacterController characterController;
     private PlayerMovement playerMovement;
     private Vector3 currentMovement;
+    
 
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+
+        if (dialogueManager != null)
+        {
+            dialogueManager.OnDialogueChainComplete += HandleDialogueChainComplete;
+        }
     }
 
     void Update()
@@ -100,6 +110,37 @@ public class MiloBehavior : MonoBehaviour
         else
         {
             anim.SetBool("Roll_Anim", false);
+        }
+    }
+    private void HandleDialogueChainComplete()
+    {
+        if (!hasTriggeredWinMenu)
+        {
+            hasTriggeredWinMenu = true;
+            StartCoroutine(TriggerWinMenuWithDelay());
+        }
+    }
+
+    private IEnumerator TriggerWinMenuWithDelay()
+    {
+        yield return new WaitForSeconds(0.3f);
+
+        // Trigger the win menu after delay
+        if (pauseMenuBehavior != null)
+        {
+            pauseMenuBehavior.ViewWinMenu();
+        }
+        else
+        {
+            Debug.LogWarning("PauseMenuBehavior reference is missing!");
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (dialogueManager != null)
+        {
+            dialogueManager.OnDialogueChainComplete -= HandleDialogueChainComplete;
         }
     }
 }
