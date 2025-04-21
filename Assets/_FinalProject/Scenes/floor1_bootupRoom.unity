@@ -2270,7 +2270,7 @@ MonoBehaviour:
     - isSpokenOutloud: 1
       emotion: 0
       scrollSpeed: 2
-      text: You enter in the passcode from the sheet.
+      text: You enter the passcode written on the sheet.
   - characterName: Aura
     hasBranch: 0
     lines:
