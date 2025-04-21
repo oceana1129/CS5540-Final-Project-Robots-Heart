@@ -28,6 +28,9 @@ public class PauseMenuBehavior : MonoBehaviour
     public Button winContinueButton;
     public Button winRestartButton;
 
+    [Header("Lose Menu Buttons")]
+    public Button loseRestartButton;
+
     private SceneManagement sceneManagement;
     bool isGamePaused = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -117,6 +120,9 @@ public class PauseMenuBehavior : MonoBehaviour
 
         if (winRestartButton != null && winRestartButton.onClick.GetPersistentEventCount() == 0)
             winRestartButton.onClick.AddListener(QuitGame);
+
+        if (loseRestartButton != null && loseRestartButton.onClick.GetPersistentEventCount() == 0)
+            loseRestartButton.onClick.AddListener(QuitGame);
     }
 
     public void ToggleGamePaused()
