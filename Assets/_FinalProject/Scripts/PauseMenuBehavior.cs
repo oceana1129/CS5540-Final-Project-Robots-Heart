@@ -20,6 +20,9 @@ public class PauseMenuBehavior : MonoBehaviour
     [Header("Credits Menu Buttons")]
     public Button creditsBackButton;
 
+    [Header("Settings Menu Buttons")]
+    public Button settingsBackButton;
+
     [Header("Win Menu Buttons")]
     public Button winContinueButton;
     public Button winRestartButton;
@@ -99,6 +102,9 @@ public class PauseMenuBehavior : MonoBehaviour
         if (settingsButton != null && settingsButton.onClick.GetPersistentEventCount() == 0)
             settingsButton.onClick.AddListener(ViewSettings);
 
+        if (settingsBackButton != null && settingsBackButton.onClick.GetPersistentEventCount() == 0)
+            settingsBackButton.onClick.AddListener(ViewPauseMenu);
+
         if (creditsButton != null && creditsButton.onClick.GetPersistentEventCount() == 0)
             creditsButton.onClick.AddListener(ViewCredits);
 
@@ -155,6 +161,10 @@ public class PauseMenuBehavior : MonoBehaviour
     {
         // SceneManager.LoadScene(0);
         Debug.Log("open the settings menu");
+        pauseContainer.SetActive(false);
+        creditsContainer.SetActive(false);
+        settingsContainer.SetActive(true);
+        winContainer.SetActive(false);
     }
 
     public void ViewCredits()
@@ -162,6 +172,7 @@ public class PauseMenuBehavior : MonoBehaviour
         Debug.Log("made by Oceana and Zuoyin");
         pauseContainer.SetActive(false);
         creditsContainer.SetActive(true);
+        settingsContainer.SetActive(false);
         winContainer.SetActive(false);
     }
 
@@ -169,6 +180,7 @@ public class PauseMenuBehavior : MonoBehaviour
         Debug.Log("looking at the pause menu");
         pauseContainer.SetActive(true);
         creditsContainer.SetActive(false);
+        settingsContainer.SetActive(false);
         winContainer.SetActive(false);
     }
 
@@ -179,6 +191,7 @@ public class PauseMenuBehavior : MonoBehaviour
         pauseMenuPanel.SetActive(true);
         pauseContainer.SetActive(false);
         creditsContainer.SetActive(false);
+        settingsContainer.SetActive(false);
         winContainer.SetActive(true);
     }
 
