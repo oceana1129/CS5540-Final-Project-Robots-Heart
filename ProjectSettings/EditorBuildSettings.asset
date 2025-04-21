@@ -9,14 +9,17 @@ EditorBuildSettings:
     path: Assets/_FinalProject/Scenes/start_screen.unity
     guid: 2cb4d0084165d8b49a9487cce1da50c0
   - enabled: 1
+    path: Assets/_FinalProject/Scenes/tutorial_screen.unity
+    guid: 0e2e6683f8ba8c947973ee99c4e61ce5
+  - enabled: 1
+    path: Assets/_FinalProject/Scenes/floor1_bootupRoom.unity
+    guid: 3e145e4c4c66097439fa9b50db68c8f8
+  - enabled: 1
     path: Assets/_FinalProject/Scenes/floor1_bathroom.unity
     guid: 9bfd7cb7d39d5874f9063c75ee4cadb4
   - enabled: 1
     path: Assets/_FinalProject/Scenes/floor1_Miloroom.unity
     guid: 774ec73648d0d954b91ce4b4e051afd2
-  - enabled: 1
-    path: Assets/_FinalProject/Scenes/floor1_bootupRoom.unity
-    guid: 3e145e4c4c66097439fa9b50db68c8f8
   - enabled: 1
     path: Assets/_FinalProject/Scenes/floor1_diagnosticBay.unity
     guid: fc36cff287beec94cadc669fb484b906

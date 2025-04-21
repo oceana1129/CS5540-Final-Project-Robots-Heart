@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
         {
             CurrentHealth = maxHealth;
         }
-
+        Debug.Log("player health at : " + CurrentHealth);
         IsAlive = true;
         UpdateHealthSlider();
     }

@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - DialogueUI
   - Milo
+  - Interact
   layers:
   - Default
   - TransparentFX
