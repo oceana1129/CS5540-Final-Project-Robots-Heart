@@ -6506,6 +6506,11 @@ PrefabInstance:
       propertyPath: lockedDoorMessageUI
       value: 
       objectReference: {fileID: 383121237}
+    - target: {fileID: 5768645745004171632, guid: 03107dbc8387c6946b2a15b39ecaa93c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
