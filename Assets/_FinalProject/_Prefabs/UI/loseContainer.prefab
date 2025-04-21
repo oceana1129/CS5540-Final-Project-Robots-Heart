@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4157320127268144918}
   m_Layer: 5
-  m_Name: loseContainer
+  m_Name: LoseContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
