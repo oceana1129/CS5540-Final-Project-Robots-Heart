@@ -10,6 +10,7 @@ public class PauseMenuBehavior : MonoBehaviour
     public GameObject creditsContainer;
     public GameObject settingsContainer;
     public GameObject winContainer;
+    public GameObject loseContainer;
 
     [Header("Pause Menu Buttons")]
     public Button resumeButton;
@@ -193,6 +194,15 @@ public class PauseMenuBehavior : MonoBehaviour
         creditsContainer.SetActive(false);
         settingsContainer.SetActive(false);
         winContainer.SetActive(true);
+    }
+    public void ViewDieMenu()
+    {
+        pauseMenuPanel.SetActive(true);
+        pauseContainer.SetActive(false);
+        creditsContainer.SetActive(false);
+        settingsContainer.SetActive(false);
+        winContainer.SetActive(false);
+        loseContainer.SetActive(true);
     }
 
 }
