@@ -7188,6 +7188,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: label_power_room
       objectReference: {fileID: 0}
+    - target: {fileID: 8958572976673035531, guid: fce91b2e89e64c746bab14567371bbde,
+        type: 3}
+      propertyPath: dialogues.Array.data[0].lines.Array.data[0].text
+      value: The door is labeled 'Milo Room'.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
