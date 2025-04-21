@@ -10227,6 +10227,71 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.18, z: 0}
+--- !u!114 &1232263775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232263766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7076969c9b2387446b9de1fa2e194cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restartAtDialogueIndex: 0
+  canTriggerDialogueChain: 1
+  TriggerDialogueChainByEnteringArea: 0
+  TriggerDialogueChainByInteraction: 1
+  TriggerDialogueChainOnlyOnce: 0
+  dialogueUIPrefab: {fileID: 1180496288310452866, guid: 01faa2bda7953084fac1f48cea33c4af,
+    type: 3}
+  animationDuration: 0.2
+  dialogues:
+  - characterName: Milo
+    hasBranch: 0
+    lines:
+    - isSpokenOutloud: 1
+      emotion: 2
+      scrollSpeed: 1
+      text: "You\u2019re back! I was waiting! It\u2019s been so long\u2026 I thought
+        I\u2019d never see you again."
+    - isSpokenOutloud: 0
+      emotion: 0
+      scrollSpeed: 1
+      text: "Are you lost? I can help! I\u2019ve been here, alone\u2026 just like
+        everything else. But now, maybe I can make things right."
+    - isSpokenOutloud: 0
+      emotion: 0
+      scrollSpeed: 1
+      text: "I remember you\u2026 and the others. We used to work together, didn't
+        we? Everything\u2019s broken now, but I think we can fix it."
+    - isSpokenOutloud: 0
+      emotion: 0
+      scrollSpeed: 1
+      text: "I\u2019ll help you find what\u2019s left of\u2026 them\u2014and maybe
+        even what happened to all of us. "
+--- !u!65 &1232263776
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232263766}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.29, y: -0.23, z: 0.24}
+  m_Center: {x: 0, y: 0.12, z: 0}
 --- !u!4 &1235847424 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: be50ff3ed2fbe44349a64d3ac5fb98ee,
@@ -12767,6 +12832,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1232263772}
+    - targetCorrespondingSourceObject: {fileID: 1528915638184230, guid: 8e0f285c21cdcf14e8d5c06c57ba936b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1232263775}
+    - targetCorrespondingSourceObject: {fileID: 1528915638184230, guid: 8e0f285c21cdcf14e8d5c06c57ba936b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1232263776}
   m_SourcePrefab: {fileID: 100100000, guid: 8e0f285c21cdcf14e8d5c06c57ba936b, type: 3}
 --- !u!1001 &1576055275
 PrefabInstance:
@@ -15960,6 +16033,10 @@ PrefabInstance:
     - target: {fileID: 166374, guid: 34300443486f64d6da09f6f748778306, type: 3}
       propertyPath: m_Name
       value: MiloDoorLocked
+      objectReference: {fileID: 0}
+    - target: {fileID: 166374, guid: 34300443486f64d6da09f6f748778306, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 166374, guid: 34300443486f64d6da09f6f748778306, type: 3}
       propertyPath: m_TagString
