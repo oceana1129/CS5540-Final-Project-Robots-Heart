@@ -203,6 +203,8 @@ public class PauseMenuBehavior : MonoBehaviour
     }
     public void ViewDieMenu()
     {
+        isGamePaused = true;
+        Time.timeScale = 0f;
         pauseMenuPanel.SetActive(true);
         pauseContainer.SetActive(false);
         creditsContainer.SetActive(false);
