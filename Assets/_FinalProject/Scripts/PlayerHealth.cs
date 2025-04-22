@@ -111,6 +111,15 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("Player dies!");
         IsAlive = false;
+        PauseMenuBehavior pauseMenu = FindFirstObjectByType<PauseMenuBehavior>();
+        if (pauseMenu != null)
+        {
+            pauseMenu.ViewDieMenu();
+        }
+        else
+        {
+            Debug.LogError("PauseMenuBehavior not found in the scene.");
+        }
     }
 
     void UpdatePublicHealth() {

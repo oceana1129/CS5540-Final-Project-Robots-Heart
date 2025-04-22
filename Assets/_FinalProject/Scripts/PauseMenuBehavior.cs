@@ -10,6 +10,7 @@ public class PauseMenuBehavior : MonoBehaviour
     public GameObject creditsContainer;
     public GameObject settingsContainer;
     public GameObject winContainer;
+    public GameObject loseContainer;
 
     [Header("Pause Menu Buttons")]
     public Button resumeButton;
@@ -26,6 +27,9 @@ public class PauseMenuBehavior : MonoBehaviour
     [Header("Win Menu Buttons")]
     public Button winContinueButton;
     public Button winRestartButton;
+
+    [Header("Lose Menu Buttons")]
+    public Button loseRestartButton;
 
     private SceneManagement sceneManagement;
     bool isGamePaused = false;
@@ -116,6 +120,9 @@ public class PauseMenuBehavior : MonoBehaviour
 
         if (winRestartButton != null && winRestartButton.onClick.GetPersistentEventCount() == 0)
             winRestartButton.onClick.AddListener(QuitGame);
+
+        if (loseRestartButton != null && loseRestartButton.onClick.GetPersistentEventCount() == 0)
+            loseRestartButton.onClick.AddListener(QuitGame);
     }
 
     public void ToggleGamePaused()
@@ -193,6 +200,15 @@ public class PauseMenuBehavior : MonoBehaviour
         creditsContainer.SetActive(false);
         settingsContainer.SetActive(false);
         winContainer.SetActive(true);
+    }
+    public void ViewDieMenu()
+    {
+        pauseMenuPanel.SetActive(true);
+        pauseContainer.SetActive(false);
+        creditsContainer.SetActive(false);
+        settingsContainer.SetActive(false);
+        winContainer.SetActive(false);
+        loseContainer.SetActive(true);
     }
 
 }
