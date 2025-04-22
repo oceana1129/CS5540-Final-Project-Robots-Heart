@@ -1,9 +1,12 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerSpawnHandler : MonoBehaviour
 {
-    void Start()
+    IEnumerator Start()
     {
+        yield return null;
+        
         string previousDoor = SpawnManager.Instance.GetPreviousDoor();
         SpawnPoint[] spawnPoints = FindObjectsOfType<SpawnPoint>();
         bool spawned = false;
