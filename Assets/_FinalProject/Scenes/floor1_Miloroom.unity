@@ -6544,6 +6544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSceneName: floor1_diagnosticBay
+  currentDoorID: milo_to_diagnostic
 --- !u!4 &747276980 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1223427207576431445, guid: 5006bc9a3289e4c42995a9ef20066fbe,
@@ -13656,6 +13657,51 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22fc62775f090453b8a270508d2df1a0, type: 3}
+--- !u!1 &1612528476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1612528478}
+  - component: {fileID: 1612528477}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1612528477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612528476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fc6dc1fd2fa624ab455432809dcfc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previousDoorID: diagnostic_to_milo
+--- !u!4 &1612528478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612528476}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.22, y: 0.1, z: 13.82}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1614308256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18741,6 +18787,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5768645745004171632, guid: 03107dbc8387c6946b2a15b39ecaa93c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5844070578970705381, guid: 03107dbc8387c6946b2a15b39ecaa93c,
         type: 3}
       propertyPath: m_Layer
@@ -19547,3 +19598,4 @@ SceneRoots:
   - {fileID: 107523343}
   - {fileID: 1893266677}
   - {fileID: 1260990001}
+  - {fileID: 1612528478}
